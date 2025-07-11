@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Fantasy Lantern
+* source:	https://sketchfab.com/3d-models/low-poly-fantasy-lantern-558359ff359f40c69ef92c1f1a706ec6
+* author:	makmiles (https://sketchfab.com/makmiles)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Fantasy Lantern" (https://sketchfab.com/3d-models/low-poly-fantasy-lantern-558359ff359f40c69ef92c1f1a706ec6) by makmiles (https://sketchfab.com/makmiles) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
