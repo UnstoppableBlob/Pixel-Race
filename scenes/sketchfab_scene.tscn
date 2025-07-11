@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjh6d11tq367n"]
+
+[ext_resource type="PackedScene" uid="uid://cjxnfoem2qf8m" path="res://assets/lantern/scene.gltf" id="1_dru8y"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_dru8y")]
+
+[node name="StreetLantern_Material_0" parent="Sketchfab_model/be74fe4d39934589b97c0e98490eb38e_fbx/RootNode/StreetLantern" index="0"]
+layers = 2

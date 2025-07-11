@@ -9,10 +9,9 @@
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 10, 0)
 
 [node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 mesh_library = ExtResource("2_cbj7p")
 cell_size = Vector3(0.5, 0.25, 0.5)
 data = {
-"cells": PackedInt32Array(65535, 0, 190)
+"cells": PackedInt32Array(65535, 0, 190, 65531, 65528, 190, 0, 65534, 194)
 }
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bke7h5il4h4wt"]
+[gd_scene load_steps=4 format=3 uid="uid://bke7h5il4h4wt"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whqpn"]
-[ext_resource type="PackedScene" uid="uid://cjxnfoem2qf8m" path="res://assets/lantern/scene.gltf" id="2_81hpe"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bqphy"]
 
@@ -18,24 +17,14 @@ mesh = SubResource("BoxMesh_bqphy")
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_k0p7y")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Head" type="Node3D" parent="."]
 
-[node name="Head" type="Node3D" parent="CanvasLayer"]
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Head"]
+[node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, 0)
+cull_mask = 1048573
 current = true
 
-[node name="Sketchfab_Scene" parent="CanvasLayer/Head/Camera3D" instance=ExtResource("2_81hpe")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.837179, -0.330952, -1.8156)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-size = Vector2i(1152, 648)
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.56, 0)
+light_color = Color(1, 0.827451, 0.47451, 1)
+light_energy = 8.556
