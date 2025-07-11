@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kut23sifa66v"
+path="res://.godot/imported/block-snow-overhang-low-narrow.obj-e0eb7cebd8cae5b0b90b31d9388150ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-snow-overhang-low-narrow.obj-e0eb7cebd8cae5b0b90b31d9388150ed.mesh"]
+
+source_file="res://assets/Models/OBJ format/block-snow-overhang-low-narrow.obj"
+dest_files=["res://.godot/imported/block-snow-overhang-low-narrow.obj-e0eb7cebd8cae5b0b90b31d9388150ed.mesh", "res://.godot/imported/block-snow-overhang-low-narrow.obj-e0eb7cebd8cae5b0b90b31d9388150ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

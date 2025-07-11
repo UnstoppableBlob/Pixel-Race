@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csdg11d3hsux3"
+path="res://.godot/imported/block-grass-long.obj-9c784eb83a36a02cf9f18605cbd0df5d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-grass-long.obj-9c784eb83a36a02cf9f18605cbd0df5d.mesh"]
+
+source_file="res://assets/Models/OBJ format/block-grass-long.obj"
+dest_files=["res://.godot/imported/block-grass-long.obj-9c784eb83a36a02cf9f18605cbd0df5d.mesh", "res://.godot/imported/block-grass-long.obj-9c784eb83a36a02cf9f18605cbd0df5d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

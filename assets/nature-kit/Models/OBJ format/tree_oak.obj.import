@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvy4ekpdagjnw"
+path="res://.godot/imported/tree_oak.obj-036103d90c4b93109967891800c128fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_oak.obj-036103d90c4b93109967891800c128fb.mesh"]
+
+source_file="res://assets/nature-kit/Models/OBJ format/tree_oak.obj"
+dest_files=["res://.godot/imported/tree_oak.obj-036103d90c4b93109967891800c128fb.mesh", "res://.godot/imported/tree_oak.obj-036103d90c4b93109967891800c128fb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

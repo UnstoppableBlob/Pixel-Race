@@ -1,0 +1,624 @@
+[gd_scene load_steps=147 format=4 uid="uid://cpnfhcwddio4w"]
+
+[ext_resource type="PackedScene" uid="uid://bl5tuyxqb5w4k" path="res://assets/Models/GLB format/arrow.glb" id="1_p44sm"]
+[ext_resource type="PackedScene" uid="uid://dgro1bl8nno7s" path="res://assets/Models/GLB format/arrows.glb" id="2_7lc4v"]
+[ext_resource type="PackedScene" uid="uid://cli8kk6l03m06" path="res://assets/Models/GLB format/barrel.glb" id="3_i73o7"]
+[ext_resource type="PackedScene" uid="uid://dnby4ogebgq4i" path="res://assets/Models/GLB format/block-grass-corner-low.glb" id="4_phvnk"]
+[ext_resource type="PackedScene" uid="uid://3tyrq05nn3lm" path="res://assets/Models/GLB format/block-grass-corner-overhang-low.glb" id="5_iqnn4"]
+[ext_resource type="PackedScene" uid="uid://7cakggid8gvm" path="res://assets/Models/GLB format/block-grass-corner-overhang.glb" id="6_g1utt"]
+[ext_resource type="PackedScene" uid="uid://caoydqu8pkvjt" path="res://assets/Models/GLB format/block-grass-corner.glb" id="7_kpxpm"]
+[ext_resource type="PackedScene" uid="uid://brheeperncavj" path="res://assets/Models/GLB format/block-grass-curve-half.glb" id="8_jauy5"]
+[ext_resource type="PackedScene" uid="uid://c8x5agjb26npa" path="res://assets/Models/GLB format/block-grass-curve-low.glb" id="9_h5533"]
+[ext_resource type="PackedScene" uid="uid://cqnv6xlfk6l7s" path="res://assets/Models/GLB format/block-grass-curve.glb" id="10_eapth"]
+[ext_resource type="PackedScene" uid="uid://dxb8dk3s5y3ti" path="res://assets/Models/GLB format/block-grass-edge.glb" id="11_feiec"]
+[ext_resource type="PackedScene" uid="uid://dkadfd50ooepm" path="res://assets/Models/GLB format/block-grass-hexagon.glb" id="12_c6dkp"]
+[ext_resource type="PackedScene" uid="uid://brc4kuutsxq62" path="res://assets/Models/GLB format/block-grass-large-slope-narrow.glb" id="13_0xl8d"]
+[ext_resource type="PackedScene" uid="uid://uqn4ahy880di" path="res://assets/Models/GLB format/block-grass-large-slope-steep-narrow.glb" id="14_dkqk2"]
+[ext_resource type="PackedScene" uid="uid://d1hfvnmhpy0c3" path="res://assets/Models/GLB format/block-grass-large-slope-steep.glb" id="15_oc8jw"]
+[ext_resource type="PackedScene" uid="uid://dkn58fk14ntkc" path="res://assets/Models/GLB format/block-grass-large-slope.glb" id="16_nikct"]
+[ext_resource type="PackedScene" uid="uid://bw1jwv2xxyyj6" path="res://assets/Models/GLB format/block-grass-large-tall.glb" id="17_meoss"]
+[ext_resource type="PackedScene" uid="uid://o6y5avosyxys" path="res://assets/Models/GLB format/block-grass-large.glb" id="18_sc0vu"]
+[ext_resource type="PackedScene" uid="uid://b4t1mdp2rwb0f" path="res://assets/Models/GLB format/block-grass-long.glb" id="19_bcajx"]
+[ext_resource type="PackedScene" uid="uid://ch5xauwvc0by3" path="res://assets/Models/GLB format/block-grass-low-hexagon.glb" id="20_3idcp"]
+[ext_resource type="PackedScene" uid="uid://dy3dl0mx247p5" path="res://assets/Models/GLB format/block-grass-low-large.glb" id="21_lje5h"]
+[ext_resource type="PackedScene" uid="uid://d37mnhe2h37fy" path="res://assets/Models/GLB format/block-grass-low-long.glb" id="22_lamg5"]
+[ext_resource type="PackedScene" uid="uid://bcwthr2q6sswn" path="res://assets/Models/GLB format/block-grass-low-narrow.glb" id="23_tf2x5"]
+[ext_resource type="PackedScene" uid="uid://drm7msk15h1oa" path="res://assets/Models/GLB format/block-grass-low.glb" id="24_kl8oc"]
+[ext_resource type="PackedScene" uid="uid://dwqiirk2d4j3r" path="res://assets/Models/GLB format/block-grass-narrow.glb" id="25_35hec"]
+[ext_resource type="PackedScene" uid="uid://842ttjlx6ihb" path="res://assets/Models/GLB format/block-grass-overhang-corner.glb" id="26_hw5uf"]
+[ext_resource type="PackedScene" uid="uid://dqh5n2xjqwyq4" path="res://assets/Models/GLB format/block-grass-overhang-edge.glb" id="27_e1eqf"]
+[ext_resource type="PackedScene" uid="uid://cnt3kg2lhs5ts" path="res://assets/Models/GLB format/block-grass-overhang-hexagon.glb" id="28_hipwh"]
+[ext_resource type="PackedScene" uid="uid://000w8ku17kf2" path="res://assets/Models/GLB format/block-grass-overhang-large-slope-narrow.glb" id="29_h8p6b"]
+[ext_resource type="PackedScene" uid="uid://cfjgc71kds7ww" path="res://assets/Models/GLB format/block-grass-overhang-large-slope-steep-narrow.glb" id="30_h3gp7"]
+[ext_resource type="PackedScene" uid="uid://5ubi7tbnf6km" path="res://assets/Models/GLB format/block-grass-overhang-large-slope-steep.glb" id="31_nnx4v"]
+[ext_resource type="PackedScene" uid="uid://bodo8xka8atsg" path="res://assets/Models/GLB format/block-grass-overhang-large-slope.glb" id="32_bts26"]
+[ext_resource type="PackedScene" uid="uid://ddu3v47uec4qg" path="res://assets/Models/GLB format/block-grass-overhang-large-tall.glb" id="33_3op1w"]
+[ext_resource type="PackedScene" uid="uid://mgnvot2dpg6b" path="res://assets/Models/GLB format/block-grass-overhang-large.glb" id="34_lqepx"]
+[ext_resource type="PackedScene" uid="uid://clc5q5wikkwlw" path="res://assets/Models/GLB format/block-grass-overhang-long.glb" id="35_dxfip"]
+[ext_resource type="PackedScene" uid="uid://btsf4x6kbw681" path="res://assets/Models/GLB format/block-grass-overhang-low-hexagon.glb" id="36_mmpfv"]
+[ext_resource type="PackedScene" uid="uid://db2t57ldtchwn" path="res://assets/Models/GLB format/block-grass-overhang-low-large.glb" id="37_2u4sx"]
+[ext_resource type="PackedScene" uid="uid://djhqajs4cum1x" path="res://assets/Models/GLB format/block-grass-overhang-low-long.glb" id="38_2c535"]
+[ext_resource type="PackedScene" uid="uid://cj4h62upm2nhw" path="res://assets/Models/GLB format/block-grass-overhang-low-narrow.glb" id="39_y0iug"]
+[ext_resource type="PackedScene" uid="uid://dbdj8rr5ejeo4" path="res://assets/Models/GLB format/block-grass-overhang-low.glb" id="40_sh056"]
+[ext_resource type="PackedScene" uid="uid://dq4ghlyl4wuiw" path="res://assets/Models/GLB format/block-grass-overhang-narrow.glb" id="41_1b2j8"]
+[ext_resource type="PackedScene" uid="uid://bck827tg88pep" path="res://assets/Models/GLB format/block-grass.glb" id="42_hqe81"]
+[ext_resource type="PackedScene" uid="uid://2v8wilen6p4p" path="res://assets/Models/GLB format/block-moving-blue.glb" id="43_0mkpc"]
+[ext_resource type="PackedScene" uid="uid://b025w3ihsqp4h" path="res://assets/Models/GLB format/block-moving-large.glb" id="44_jm3kh"]
+[ext_resource type="PackedScene" uid="uid://viyejuh6mpkl" path="res://assets/Models/GLB format/block-moving.glb" id="45_48lbc"]
+[ext_resource type="PackedScene" uid="uid://2ha8ktp7vlp" path="res://assets/Models/GLB format/block-snow-corner-low.glb" id="46_pn546"]
+[ext_resource type="PackedScene" uid="uid://cu84hs1xhuqwq" path="res://assets/Models/GLB format/block-snow-corner-overhang-low.glb" id="47_ruma0"]
+[ext_resource type="PackedScene" uid="uid://dkeusb16c775h" path="res://assets/Models/GLB format/block-snow-corner-overhang.glb" id="48_nc415"]
+[ext_resource type="PackedScene" uid="uid://d0t4k2ogwg5eq" path="res://assets/Models/GLB format/block-snow-corner.glb" id="49_rwaby"]
+[ext_resource type="PackedScene" uid="uid://di8wyv5fnwm36" path="res://assets/Models/GLB format/block-snow-curve-half.glb" id="50_vndlw"]
+[ext_resource type="PackedScene" uid="uid://cgfp5yygibm7h" path="res://assets/Models/GLB format/block-snow-curve-low.glb" id="51_8os3n"]
+[ext_resource type="PackedScene" uid="uid://dpy8lm15s35ul" path="res://assets/Models/GLB format/block-snow-curve.glb" id="52_n5o74"]
+[ext_resource type="PackedScene" uid="uid://cjwd5evwpepnp" path="res://assets/Models/GLB format/block-snow-edge.glb" id="53_b37po"]
+[ext_resource type="PackedScene" uid="uid://s5iy0c46roal" path="res://assets/Models/GLB format/block-snow-hexagon.glb" id="54_x42a7"]
+[ext_resource type="PackedScene" uid="uid://b3ydbbfh4tmp2" path="res://assets/Models/GLB format/block-snow-large-slope-narrow.glb" id="55_8jp8c"]
+[ext_resource type="PackedScene" uid="uid://d0arsuije38ua" path="res://assets/Models/GLB format/block-snow-large-slope-steep-narrow.glb" id="56_a2lp7"]
+[ext_resource type="PackedScene" uid="uid://nwb1luitq7fg" path="res://assets/Models/GLB format/block-snow-large-slope-steep.glb" id="57_owhon"]
+[ext_resource type="PackedScene" uid="uid://dwk14yq10yakq" path="res://assets/Models/GLB format/block-snow-large-slope.glb" id="58_th2sl"]
+[ext_resource type="PackedScene" uid="uid://tpcx4tlha5ow" path="res://assets/Models/GLB format/block-snow-large-tall.glb" id="59_y0nna"]
+[ext_resource type="PackedScene" uid="uid://bnomdyh6e6yjm" path="res://assets/Models/GLB format/block-snow-large.glb" id="60_f1oyj"]
+[ext_resource type="PackedScene" uid="uid://dm5isu0e3sc5x" path="res://assets/Models/GLB format/block-snow-long.glb" id="61_tq1f1"]
+[ext_resource type="PackedScene" uid="uid://cxlb064uqhum4" path="res://assets/Models/GLB format/block-snow-low-hexagon.glb" id="62_gusxa"]
+[ext_resource type="PackedScene" uid="uid://d3wlsp6yragb5" path="res://assets/Models/GLB format/block-snow-low-large.glb" id="63_cwtxx"]
+[ext_resource type="PackedScene" uid="uid://b1m80d0divqjk" path="res://assets/Models/GLB format/block-snow-low-long.glb" id="64_224wj"]
+[ext_resource type="PackedScene" uid="uid://m0i607khrapq" path="res://assets/Models/GLB format/block-snow-low-narrow.glb" id="65_sqouo"]
+[ext_resource type="PackedScene" uid="uid://b3h83dwbovdcr" path="res://assets/Models/GLB format/block-snow-low.glb" id="66_662nn"]
+[ext_resource type="PackedScene" uid="uid://chjcpam8bnb5g" path="res://assets/Models/GLB format/block-snow-narrow.glb" id="67_wqp7i"]
+[ext_resource type="PackedScene" uid="uid://dppm631l5o74g" path="res://assets/Models/GLB format/block-snow-overhang-corner.glb" id="68_amipf"]
+[ext_resource type="PackedScene" uid="uid://c2jyty4hlspyy" path="res://assets/Models/GLB format/block-snow-overhang-edge.glb" id="69_am8hy"]
+[ext_resource type="PackedScene" uid="uid://bt4nwioff08yt" path="res://assets/Models/GLB format/block-snow-overhang-hexagon.glb" id="70_il7l4"]
+[ext_resource type="PackedScene" uid="uid://4l6yv3vabjbp" path="res://assets/Models/GLB format/block-snow-overhang-large-slope-narrow.glb" id="71_miidj"]
+[ext_resource type="PackedScene" uid="uid://cklqakces8ipg" path="res://assets/Models/GLB format/block-snow-overhang-large-slope-steep-narrow.glb" id="72_m2amb"]
+[ext_resource type="PackedScene" uid="uid://cyd5jf1gtt8jp" path="res://assets/Models/GLB format/block-snow-overhang-large-slope-steep.glb" id="73_v0mr3"]
+[ext_resource type="PackedScene" uid="uid://dbx2a26wnusg6" path="res://assets/Models/GLB format/block-snow-overhang-large-slope.glb" id="74_0d42j"]
+[ext_resource type="PackedScene" uid="uid://ca2m154tg06u" path="res://assets/Models/GLB format/block-snow-overhang-large-tall.glb" id="75_wqxqc"]
+[ext_resource type="PackedScene" uid="uid://bb114syrashar" path="res://assets/Models/GLB format/block-snow-overhang-large.glb" id="76_627xl"]
+[ext_resource type="PackedScene" uid="uid://bs4gypd4vfdv7" path="res://assets/Models/GLB format/block-snow-overhang-long.glb" id="77_rk2in"]
+[ext_resource type="PackedScene" uid="uid://dtcj83nyp54mi" path="res://assets/Models/GLB format/block-snow-overhang-low-hexagon.glb" id="78_05uxr"]
+[ext_resource type="PackedScene" uid="uid://bq8uqjcuao7ly" path="res://assets/Models/GLB format/block-snow-overhang-low-large.glb" id="79_vlclf"]
+[ext_resource type="PackedScene" uid="uid://bppbpnqwxiuj6" path="res://assets/Models/GLB format/block-snow-overhang-low-long.glb" id="80_fxvsc"]
+[ext_resource type="PackedScene" uid="uid://rnww54wjg16c" path="res://assets/Models/GLB format/block-snow-overhang-low-narrow.glb" id="81_d78n4"]
+[ext_resource type="PackedScene" uid="uid://l6obqvdb6qnj" path="res://assets/Models/GLB format/block-snow-overhang-low.glb" id="82_1hork"]
+[ext_resource type="PackedScene" uid="uid://kfhvfvidbtqq" path="res://assets/Models/GLB format/block-snow-overhang-narrow.glb" id="83_laix0"]
+[ext_resource type="PackedScene" uid="uid://dsl13ukx02lth" path="res://assets/Models/GLB format/block-snow.glb" id="84_3gck4"]
+[ext_resource type="PackedScene" uid="uid://b4a41ed1ayc2i" path="res://assets/Models/GLB format/bomb.glb" id="85_ar2ag"]
+[ext_resource type="PackedScene" uid="uid://be7hjmqy03mfx" path="res://assets/Models/GLB format/button-round.glb" id="86_s7a8s"]
+[ext_resource type="PackedScene" uid="uid://qnxubwknh31k" path="res://assets/Models/GLB format/button-square.glb" id="87_3ggbo"]
+[ext_resource type="PackedScene" uid="uid://bybhoc5gevh6m" path="res://assets/Models/GLB format/chest.glb" id="88_8df0l"]
+[ext_resource type="PackedScene" uid="uid://cwrj775ihosdk" path="res://assets/Models/GLB format/coin-bronze.glb" id="89_g1xa4"]
+[ext_resource type="PackedScene" uid="uid://bjb6iw6y7jcuu" path="res://assets/Models/GLB format/coin-gold.glb" id="90_4ybj3"]
+[ext_resource type="PackedScene" uid="uid://uq650p4g4lk" path="res://assets/Models/GLB format/coin-silver.glb" id="91_2dky6"]
+[ext_resource type="PackedScene" uid="uid://1k48bj0xoj51" path="res://assets/Models/GLB format/crate-item-strong.glb" id="92_m055b"]
+[ext_resource type="PackedScene" uid="uid://ctlxdj30j1cbt" path="res://assets/Models/GLB format/crate-item.glb" id="93_wotsb"]
+[ext_resource type="PackedScene" uid="uid://43ypqyqhypjv" path="res://assets/Models/GLB format/crate-strong.glb" id="94_j7q8e"]
+[ext_resource type="PackedScene" uid="uid://ct8vox7yds4xr" path="res://assets/Models/GLB format/crate.glb" id="95_whqws"]
+[ext_resource type="PackedScene" uid="uid://dvmn00s7esxwl" path="res://assets/Models/GLB format/door-large-open.glb" id="96_w00sy"]
+[ext_resource type="PackedScene" uid="uid://b8fwmyvh0oubq" path="res://assets/Models/GLB format/door-open.glb" id="97_t8nfq"]
+[ext_resource type="PackedScene" uid="uid://sgkm52oqfye1" path="res://assets/Models/GLB format/door-rotate-large.glb" id="98_gxpp4"]
+[ext_resource type="PackedScene" uid="uid://d3jl5a30vuxvh" path="res://assets/Models/GLB format/door-rotate.glb" id="99_it7pk"]
+[ext_resource type="PackedScene" uid="uid://4xvnp8amlmdb" path="res://assets/Models/GLB format/fence-broken.glb" id="100_48nmv"]
+[ext_resource type="PackedScene" uid="uid://dved6uv4yqcet" path="res://assets/Models/GLB format/fence-corner-curved.glb" id="101_c181l"]
+[ext_resource type="PackedScene" uid="uid://bghmo5kuii7x2" path="res://assets/Models/GLB format/fence-corner.glb" id="102_65yk1"]
+[ext_resource type="PackedScene" uid="uid://cfx1txiuyp8le" path="res://assets/Models/GLB format/fence-low-broken.glb" id="103_lelwg"]
+[ext_resource type="PackedScene" uid="uid://dtcragabdtrmq" path="res://assets/Models/GLB format/fence-low-corner-curved.glb" id="104_cs0dq"]
+[ext_resource type="PackedScene" uid="uid://gvee8224ih07" path="res://assets/Models/GLB format/fence-low-corner.glb" id="105_r4s0i"]
+[ext_resource type="PackedScene" uid="uid://bffknwa7quax5" path="res://assets/Models/GLB format/fence-low-straight.glb" id="106_ek4ph"]
+[ext_resource type="PackedScene" uid="uid://xbxxyk2u6wr5" path="res://assets/Models/GLB format/fence-straight.glb" id="107_giahe"]
+[ext_resource type="PackedScene" uid="uid://de76pmxr45ob7" path="res://assets/Models/GLB format/flag.glb" id="108_8nn18"]
+[ext_resource type="PackedScene" uid="uid://drublqionnbmu" path="res://assets/Models/GLB format/flowers-tall.glb" id="109_cl3sy"]
+[ext_resource type="PackedScene" uid="uid://bt7dhe080ngrg" path="res://assets/Models/GLB format/flowers.glb" id="110_iwvud"]
+[ext_resource type="PackedScene" uid="uid://dmv28tqsod3s" path="res://assets/Models/GLB format/grass.glb" id="111_voqek"]
+[ext_resource type="PackedScene" uid="uid://dga2xyxto1pm6" path="res://assets/Models/GLB format/heart.glb" id="112_3ccih"]
+[ext_resource type="PackedScene" uid="uid://8sxiu88hw8ca" path="res://assets/Models/GLB format/hedge-corner.glb" id="113_lwhlk"]
+[ext_resource type="PackedScene" uid="uid://t7erk18e8wil" path="res://assets/Models/GLB format/hedge.glb" id="114_8e3ub"]
+[ext_resource type="PackedScene" uid="uid://c1pho7p7tkli5" path="res://assets/Models/GLB format/jewel.glb" id="115_6d876"]
+[ext_resource type="PackedScene" uid="uid://chk6g6g01qwxp" path="res://assets/Models/GLB format/key.glb" id="116_bvajo"]
+[ext_resource type="PackedScene" uid="uid://dqgu0x2nuettm" path="res://assets/Models/GLB format/ladder-broken.glb" id="117_8fxjd"]
+[ext_resource type="PackedScene" uid="uid://bh4506pj5by1q" path="res://assets/Models/GLB format/ladder-long.glb" id="118_d6d0x"]
+[ext_resource type="PackedScene" uid="uid://dv6ytncsqpiax" path="res://assets/Models/GLB format/ladder.glb" id="119_p0r81"]
+[ext_resource type="PackedScene" uid="uid://c5vyxgap0c2od" path="res://assets/Models/GLB format/lever.glb" id="120_iwqbm"]
+[ext_resource type="PackedScene" uid="uid://bqs14sdjrq0ir" path="res://assets/Models/GLB format/lock.glb" id="121_2x1n8"]
+[ext_resource type="PackedScene" uid="uid://eqxu6vmwa1t6" path="res://assets/Models/GLB format/mushrooms.glb" id="122_ry8iu"]
+[ext_resource type="PackedScene" uid="uid://cbrp6h17syib" path="res://assets/Models/GLB format/plant.glb" id="123_j0rsi"]
+[ext_resource type="PackedScene" uid="uid://cbj2v2sbfxtii" path="res://assets/Models/GLB format/platform-fortified.glb" id="124_xpdcm"]
+[ext_resource type="PackedScene" uid="uid://bcowhvxtp4ps1" path="res://assets/Models/GLB format/platform-overhang.glb" id="125_c1o0f"]
+[ext_resource type="PackedScene" uid="uid://jc15ga4v56rd" path="res://assets/Models/GLB format/platform-ramp.glb" id="126_kvhsm"]
+[ext_resource type="PackedScene" uid="uid://dcybmis7k1fwr" path="res://assets/Models/GLB format/platform.glb" id="127_d5b4l"]
+[ext_resource type="PackedScene" uid="uid://bf3h7np4gcsyp" path="res://assets/Models/GLB format/poles.glb" id="128_ibywx"]
+[ext_resource type="Texture2D" uid="uid://cg8botg4lsr1e" path="res://assets/Models/GLB format/Textures/colormap.png" id="129_0v35o"]
+[ext_resource type="PackedScene" uid="uid://gk5c6ar3ped8" path="res://assets/Models/GLB format/saw.glb" id="130_wd52n"]
+[ext_resource type="PackedScene" uid="uid://cu4dyjn26ljc8" path="res://assets/Models/GLB format/sign.glb" id="131_4b20f"]
+[ext_resource type="PackedScene" uid="uid://dga02rqdnk22l" path="res://assets/Models/GLB format/spike-block-wide.glb" id="132_ug8jm"]
+[ext_resource type="PackedScene" uid="uid://iupnj7e2d60e" path="res://assets/Models/GLB format/spike-block.glb" id="133_4v3ee"]
+[ext_resource type="PackedScene" uid="uid://dyelfxh2v6dv3" path="res://assets/Models/GLB format/stones.glb" id="134_nsdp1"]
+[ext_resource type="PackedScene" uid="uid://7rweh4h4dxl3" path="res://assets/Models/GLB format/trap-spikes-large.glb" id="135_ugu1b"]
+[ext_resource type="PackedScene" uid="uid://snx2cwcy6jmm" path="res://assets/Models/GLB format/trap-spikes.glb" id="136_xtxfe"]
+[ext_resource type="PackedScene" uid="uid://cdyd867v5hy1o" path="res://assets/Models/GLB format/tree-pine-small.glb" id="137_1euna"]
+[ext_resource type="PackedScene" uid="uid://pl5bylbq72xn" path="res://assets/Models/GLB format/tree-pine-snow-small.glb" id="138_evh3v"]
+[ext_resource type="PackedScene" uid="uid://ymro57ybgug6" path="res://assets/Models/GLB format/tree-pine-snow.glb" id="139_cesw2"]
+[ext_resource type="PackedScene" uid="uid://bn3kg3kspahs2" path="res://assets/Models/GLB format/tree-pine.glb" id="140_vxcqi"]
+[ext_resource type="PackedScene" uid="uid://ba6s6eu6tsk88" path="res://assets/Models/GLB format/tree-snow.glb" id="141_brwbm"]
+[ext_resource type="PackedScene" uid="uid://bo5en207mur1i" path="res://assets/Models/GLB format/tree.glb" id="142_p5cm7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7gpk"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("129_0v35o")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8sf8q"]
+_surfaces = [{
+"aabb": AABB(-0.326549, 0, -0.331152, 0.653099, 0.4, 0.662304),
+"format": 34896613377,
+"index_count": 300,
+"index_data": PackedByteArray("AgAAAAEABQADAAQABQAGAAcABwAIAAUACAADAAUACwAJAAoACgAMAAsAAgAMAAoAAAACAAoACgANAAAAAgAIAAwACAAOAAwAAgADAAgAAgAPAAMADwAEAAMAAQAQABEAEQAPAAEADwACAAEAEgAQAAEAAQANABIAAQAAAA0ACAAHABMAEwAOAAgAEQAGAAUABQAEABEABAAPABEAFgAUABUAGQAXABgAHAAaABsAHwAdAB4AHgAgAB8AIAAhAB8AIAAaACEAIAAbABoAJAAiACMAIwAUACQAIwAVABQAHgAdACUAJQAYAB4AGAAXAB4AIwAmACcAJwAVACMAJwAWABUAJwAoABYAKAApABYAKQAqABYAKgApACsAIAAqACsAGwAgACsAHAAbACsAKwAsABwAGAAlACIAIgAkABgAJAAZABgAGQAkABQAFAAWABkAFgAqABkAKgAXABkAKgAgABcAIAAeABcALgAtACYALwAuACYALwAwAC4AIgAvACYAJgAxACIALwAyADAAMgAzADAAMgA0ADMANQAzADQANAA2ADUANgA3ADUANgA4ADcAOwA5ADoAPgA8AD0AQQA/AEAAQQBAACYAJgA5AEEAJgBCADkAQgA6ADkAOwA6AEIAQgBDADsAQwBEADsARwBFAEYARgA+AEcAPgBIAEcAPgA9AEgAPQBJAEgAQQA5ADsAOwBEAEEARAA/AEEARAA8AD8APAApAD8APABKACkAPAA+AEoAPgBGAEoARABDAEkASQA9AEQAPQA8AEQASwBKAEYARgBFAEsA"),
+"lods": [0.193118, PackedByteArray("AgAAABAAEAAAAA0AEAANABIADwACABAAEQAPABAACgANAAAAAAACAAoACwAJAAoACgAMAAsAAgAMAAoAAgAIAAwACAAOAAwAAgADAAgAAgAPAAMADwAEAAMAAwAGAAcABwAIAAMAEQAGAAMAAwAEABEABAAPABEACAAHABMAEwAOAAgAJAAqACUAKgAdACUAHwAdACoAKgAhAB8AKgAaACEAHAAaACsAKwAsABwAKgApACsAGgAqACsAJAAiACMAJwAkACMAJwAqACQAJwAoACoAKAApACoAIwAmACcAIgAkACUALgAtACYALwAuACYALwAwAC4AIgAvACYAJgAxACIALwAyADAAMgAzADAAMgA0ADMANQAzADQANAA2ADUANgA3ADUANgA4ADcARAA/AEAARABFAEsARABAACYAJgBCAEQAQgBDAEQARwBFAEQARABIAEcASQBIAEQARABDAEkARAApAD8ARABKACkASwBKAEQA")],
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 76,
+"vertex_data": PackedByteArray("FXMdTn3KAADhVQ4nwuoAAK44HU59ygAAISsdTnVuAAB7Gx1OL4kAAL0NDieLbwAAAAAAALhnAADhVQAA0zYAAOFVHU4eVgAAeYUdTkmSAADobB1OPrwAADZ7HU5xjAAAIWcdTq9vAAC1dB1OkMkAACFnHU7wXwAAexsdTt25AADhVQAAaPoAAAAAAACCyQAAwnkAAPrlAACBXwAATjwAAKzi///tZgAAKu//fz1+AABy1P//OX8AAAmT//+PKwAAlK3/fzkOAAAgyP//jysAACFnHU6vbwAA/2v/fz1+AAA2ex1OcYwAAIFfAABzLAAAfXj//6w6AACBXwAATjwAAH14//8gdwAAIWcdTvBfAACn+wAAcywAAKf7AABZhQAArOL//6w6AACUrQAAAAAAAM7mAAA4kQAA1MuaqNiNAAC9yjWrLI4AAJStNavGngAAlK3//1qVAABelDWrbJAAAHmFHU5JkgAA//8AAD68AABU2AAA//8AAJStAAAAAAAA/ogAAP//AACn+wAAWYUAAIFfAABzLAAAwnkAAPrlAACBXwAATjwAAOFVAABo+gAA4VUAANM2AAAAAAAAgskAAAAAAAC4ZwAAH9k1qzWlAABN85pVPrwAAB/ZNatH0wAAJKQ1q1DqAABXj5pVJ/UAAHWONav43QAAvco1qyyOAADUy5qo2I0AAKLLNassjgAA//8AAD68AABU2AAA/v8AAKLLNatQ6gAA6GwdTj68AAC2ejWrPrwAALV0HU6QyQAAwnkAAPrlAAD+iAAA/v8AAF6UNatskAAAeYUdTkmSAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mi8tj"]
+resource_name = "rocks_rocks"
+_surfaces = [{
+"aabb": AABB(-0.326549, 0, -0.331152, 0.653099, 0.4, 0.662304),
+"attribute_data": PackedByteArray("/zdlxv83/9//N2XG/zdlxv83Zcb/N//f/zeY+f83mPn/N//f/zdlxv83Zcb/N2XG/zdlxv83Zcb/N2XG/zdlxv83Zcb/N2XG/zdlxv83Zcb/N2XG/zdlxv83Zcb/N5j5/zeY+f83/9//N2XG/zdlxv83mPn/N//f/zeY+f83Zcb/N2XG/zeY+f83mPn/N2XG/zdlxv83mPn/N//f/zeY+f83Zcb/N2XG/zdlxv83/9//N2XG/zdlxv83/9//N2XG/zf56f83/9//N/np/zeY+f83Zcb/N5j5/zdlxv83+en/N/np/zf/3/83mPn/N5j5/zdlxv83Zcb/N//f/zeY+f83mPn/N2XG/zf/3/83Zcb/N5j5/zfg1/83mPn/N//f/zdlxv83Wtf/N1rX/zdlxv83Wtf/N1rX/zdlxv83Zcb/N//f/zf56f83+en/N5j5/zeY+f83/9//N2XG/zdlxv83Zcb/N2XG/zdlxv83Zcb/N2XG/zdlxv83Zcb/N2XG/zcD2f83Tsz/NwPZ/zdlxv83A9n/N2XG/zdlxv83Zcb/N8re/zeY+f83mPn/N5j5/zeY+f83mPn/N//f/zfL7P83/9//N//f/zfL7P83/9//N//f/zdi4P83/9//N2Lg/zeY+f83/9//N//f/zeY+f83y+z/N8vs/zeY+f83/9//N5j5/zf/3/836u3/N//f/zfq7f83/9//N5j5/zfL7P83mPn/N//f/zf/3/83/9//N//f/zf/3/83/9//N//f/zf/3/83/9//N//f/zeY+f83mPn/N//f/zfL7P83/9//N//f/zf/3/836u3/N+rt/zdlxv83Zcb/N2XG/zdlxv83Zcb/N2XG/zdlxv83Zcb/N5j5/zeY+f83Zcb/N5j5/zeY+f83Zcb/N/np/zf56f83+en/N5j5/zeY+f83mPn/N5j5/zdlxv83Zcb/N2XG/zeY+f83mPn/N1rX/zdlxv83Zcb/N2XG/zdlxv83/9//N2Lg/zdi4P83mPn/N5j5/zf/3/83/9//N//f/zf/3/836u3/N5j5/zeY+f83/9//N+rt/zfq7Q=="),
+"format": 34896613399,
+"index_count": 300,
+"index_data": PackedByteArray("AgAAAAEABQADAAQACAAGAAcABwAJAAgACQAKAAgADQALAAwADAAOAA0ADwAOAAwAEAAPAAwADAARABAADwASAA4AEgATAA4ADwAUABIADwAVABQAFQAWABQAGQAXABgAGAAaABkAGgAbABkAHgAcAB0AHQAfAB4AHQAgAB8AIwAhACIAIgAkACMAJwAlACYAJgAoACcAKAApACcALAAqACsALwAtAC4AMgAwADEANQAzADQANAA2ADUANgA3ADUANgA4ADcANgA5ADgAPAA6ADsAOwA9ADwAOwA+AD0AQQA/AEAAQABCAEEAQgBDAEEARgBEAEUARQBHAEYARQBIAEcARQBJAEgASQBKAEgASgBLAEgATgBMAE0ATwBOAE0AUABPAE0AUQBQAE0ATQBSAFEAVQBTAFQAVABWAFUAVgBXAFUAWgBYAFkAWQBbAFoAWwBcAFoAXABdAFoAXABeAF0AXgBfAF0AYgBgAGEAYwBiAGEAYwBkAGIAZQBjAGEAYQBmAGUAYwBnAGQAZwBoAGQAZwBpAGgAagBoAGkAaQBrAGoAawBsAGoAawBtAGwAcABuAG8AcwBxAHIAdgB0AHUAeQB3AHgAeAB6AHkAeAB7AHoAewB8AHoAfwB9AH4AfgCAAH8AgACBAH8AhACCAIMAgwCFAIQAhQCGAIQAhQCHAIYAhwCIAIYAiwCJAIoAigCMAIsAjACNAIsAjACOAI0AjgCPAI0AjgCQAI8AjgCRAJAAkQCSAJAAlQCTAJQAlACWAJUAlgCXAJUAmgCYAJkAmQCbAJoA"),
+"lods": [0.193118, PackedByteArray("ngCcAKcApwCdAB8ApwAfAB4AGgCfAKcAGAAaAKcADAARAJwAnACeAAwADQALAAwADAAOAA0AngAOAAwAngASAA4AEgATAA4AngChABIAngAVAKEAFQCiAKEAoACkAAcABwAJAKAAqACkAKAAoACjAKgAowCpAKgApgClACIAIgAkAKYAsQC3ALQAuQCtALQANQAzALgAuAA3ADUAuACqADcArACqAE0ATQBSAKwAugC2AE0AqwC6AE0AsgA6AK8ARQCyAK8ARQBLALIARQBJAEsASQBKAEsAsABEAEUArgCzALUAYgBgAGEAYwBiAGEAYwBkAGIAZQBjAGEAYQBmAGUAYwBnAGQAZwBoAGQAZwBpAGgAagBoAGkAaQBrAGoAawBsAGoAawBtAGwAwAC7ALwAwADEAMkAwQC9AHgAeAC+AMEAvgCAAMEAhACCAMIAwgDFAIQAxgDFAMIAwgC/AMYAjACPAI0AjACQAI8AyADHAMMA")],
+"material": SubResource("StandardMaterial3D_u7gpk"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 202,
+"vertex_data": PackedByteArray("FXMdTn3KR6bhVQ4nwupHpq44HU59ykemISsdTnVuC9l7Gx1OL4kL2b0NDieLbwvZAAAAALhnZuvhVQAA0zZm670NDieLb2br4VUdTh5WZushKx1OdW5m63mFHU5Jkv//6GwdTj68//82ex1OcYz//yFnHU6vb///rjgdTn3K//8Vcx1Ofcr//7V0HU6Qyf//4VUdTh5W//8hZx1O8F///yErHU51bv//exsdTt25//97Gx1OL4n//+FVAABo+u6dAAAAAILJ7p3hVQ4nwurunXsbHU7due6drjgdTn3K7p3hVQAAaPruneFVDifC6u6dwnkAAPrl7p21dB1OkMnunRVzHU59yu6d4VUAANM2ZuuBXwAATjxm6+FVHU4eVmbrIWcdTvBfZusAAAAAuGe0wr0NDieLb7TCAAAAAILJtMJ7Gx1OL4m0wnsbHU7dubTCrOL//+1mCawq7/9/PX4JrHLU//85fwmsCZP//48r//+Urf9/OQ7//yDI//+PK///IWcdTq9v0Kf/a/9/PX7QpzZ7HU5xjNCngV8AAHMsQMB9eP//rDpAwIFfAABOPEDAfXj//yB3QMAhZx1O8F9AwCFnHU6vb0DA/2v/fz1+QMCn+wAAcyxAwKf7AABZhUDArOL//6w6QMCs4v//7WZAwCrv/389fkDAgV8AAHMsu+qUrQAAAAC76n14//+sOrvqlK3/fzkOu+oJk///jyu76s7mAAA4kUKW1MuaqNiNQpan+wAAWYVClirv/389fkKWctT//zl/Qpa9yjWrLI5ClpStNavGnkKWlK3//1qVQpaUrTWrxp5Cll6UNatskEKWlK3//1qVQpZ9eP//IHdClv9r/389fkKWNnsdTnGMQpZ5hR1OSZJClpStAAAAALvqp/sAAHMsu+qUrf9/OQ676qzi//+sOrvqIMj//48ru+qs4v//rDr//6zi///tZv//IMj//48r//9y1P//OX///5St//9alf//CZP//48r//99eP//IHf//314//+sOv////8AAD68/7/O5gAAOJH/v1TYAAD///+/lK0AAAAA/7/+iAAA////v6f7AABzLP+/p/sAAFmF/7+BXwAAcyz/v8J5AAD65f+/gV8AAE48/7/hVQAAaPr/v+FVAADTNv+/AAAAAILJ/78AAAAAuGf/vx/ZNas1pSTCTfOaVT68JMIf2TWr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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8sf8q")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_333vw"]
+data = PackedVector3Array(-0.1819, 0.1221, 0.1927, -0.033, 0.1221, 0.1927, -0.1075, 0.061, 0.2762, -0.2915, 0.061, -0.0426, -0.2165, 0.1221, -0.0454, -0.2564, 0.1221, 0.0238, -0.2915, 0.061, -0.0426, -0.3265, 0, -0.0628, -0.1075, 0, -0.1893, -0.1075, 0, -0.1893, -0.1075, 0.1221, -0.1084, -0.2915, 0.061, -0.0426, -0.1075, 0.1221, -0.1084, -0.2165, 0.1221, -0.0454, -0.2915, 0.061, -0.0426, -0.0122, 0.1221, 0.0322, 0.014, 0.1221, 0.0473, -0.0487, 0.1221, 0.1559, -0.0487, 0.1221, 0.1559, -0.0634, 0.1221, -0.0422, -0.0122, 0.1221, 0.0322, -0.1819, 0.1221, 0.1927, -0.0634, 0.1221, -0.0422, -0.0487, 0.1221, 0.1559, -0.033, 0.1221, 0.1927, -0.1819, 0.1221, 0.1927, -0.0487, 0.1221, 0.1559, -0.0487, 0.1221, 0.1559, -0.0288, 0.1221, 0.1903, -0.033, 0.1221, 0.1927, -0.1819, 0.1221, 0.1927, -0.1075, 0.1221, -0.1084, -0.0634, 0.1221, -0.0422, -0.1075, 0.1221, -0.1084, -0.0634, 0.1221, -0.0829, -0.0634, 0.1221, -0.0422, -0.1819, 0.1221, 0.1927, -0.2165, 0.1221, -0.0454, -0.1075, 0.1221, -0.1084, -0.1819, 0.1221, 0.1927, -0.2564, 0.1221, 0.1497, -0.2165, 0.1221, -0.0454, -0.2564, 0.1221, 0.1497, -0.2564, 0.1221, 0.0238, -0.2165, 0.1221, -0.0454, -0.1075, 0.061, 0.2762, -0.1075, 0, 0.3167, -0.3265, 0, 0.1902, -0.3265, 0, 0.1902, -0.2564, 0.1221, 0.1497, -0.1075, 0.061, 0.2762, -0.2564, 0.1221, 0.1497, -0.1819, 0.1221, 0.1927, -0.1075, 0.061, 0.2762, -0.0159, 0, 0.2638, -0.1075, 0, 0.3167, -0.1075, 0.061, 0.2762, -0.1075, 0.061, 0.2762, -0.0288, 0.1221, 0.1903, -0.0159, 0, 0.2638, -0.1075, 0.061, 0.2762, -0.033, 0.1221, 0.1927, -0.0288, 0.1221, 0.1903, -0.1075, 0.1221, -0.1084, -0.1075, 0, -0.1893, -0.0829, 0, -0.1751, -0.0829, 0, -0.1751, -0.0634, 0.1221, -0.0829, -0.1075, 0.1221, -0.1084, -0.3265, 0, 0.1902, -0.3265, 0, -0.0628, -0.2915, 0.061, -0.0426, -0.2915, 0.061, -0.0426, -0.2564, 0.1221, 0.0238, -0.3265, 0, 0.1902, -0.2564, 0.1221, 0.0238, -0.2564, 0.1221, 0.1497, -0.3265, 0, 0.1902, 0.2154, 0.4, -0.002, 0.2517, 0.4, -0.0649, 0.2836, 0.2, -0.0046, 0.184, 0.4, -0.2185, 0.0486, 0.4, -0.2185, 0.1163, 0.2, -0.2944, -0.0122, 0.1221, 0.0322, -0.0634, 0.1221, -0.0422, -0.051, 0.2, -0.0046, -0.0829, 0, -0.1751, -0.0829, 0, -0.2162, -0.0192, 0.4, -0.1794, -0.0192, 0.4, -0.1794, -0.0192, 0.4, -0.023, -0.0829, 0, -0.1751, -0.0192, 0.4, -0.023, -0.0634, 0.1221, -0.0829, -0.0829, 0, -0.1751, -0.0192, 0.4, -0.023, -0.0634, 0.1221, -0.0422, -0.0634, 0.1221, -0.0829, -0.0192, 0.4, -0.023, -0.051, 0.2, -0.0046, -0.0634, 0.1221, -0.0422, 0.2517, 0.4, -0.1794, 0.3155, 0, -0.2162, 0.3155, 0, 0.0138, 0.3155, 0, 0.0138, 0.2517, 0.4, -0.0649, 0.2517, 0.4, -0.1794, 0.3155, 0, 0.0138, 0.2836, 0.2, -0.0046, 0.2517, 0.4, -0.0649, -0.0192, 0.4, -0.1794, -0.0829, 0, -0.2162, 0.1163, 0, -0.3312, 0.1163, 0, -0.3312, 0.1163, 0.2, -0.2944, -0.0192, 0.4, -0.1794, 0.1163, 0.2, -0.2944, 0.0486, 0.4, -0.2185, -0.0192, 0.4, -0.1794, 0.3155, 0, 0.0138, 0.2623, 0, 0.0446, 0.1935, 0.2634, 0.0358, 0.1935, 0.2634, 0.0358, 0.2836, 0.2, -0.0046, 0.3155, 0, 0.0138, 0.1935, 0.2634, 0.0358, 0.2154, 0.4, -0.002, 0.2836, 0.2, -0.0046, 0.1935, 0.2634, 0.0358, 0.1907, 0.2675, 0.0367, 0.2154, 0.4, -0.002, 0.1907, 0.2675, 0.0367, 0.1163, 0.2675, 0.0796, 0.2154, 0.4, -0.002, 0.1163, 0.2675, 0.0796, 0.1163, 0.4, 0.0552, 0.2154, 0.4, -0.002, 0.1163, 0.4, 0.0552, 0.1163, 0.2675, 0.0796, 0.052, 0.2675, 0.0425, -0.0192, 0.4, -0.023, 0.1163, 0.4, 0.0552, 0.052, 0.2675, 0.0425, -0.051, 0.2, -0.0046, -0.0192, 0.4, -0.023, 0.052, 0.2675, 0.0425, -0.0122, 0.1221, 0.0322, -0.051, 0.2, -0.0046, 0.052, 0.2675, 0.0425, 0.052, 0.2675, 0.0425, 0.014, 0.1221, 0.0473, -0.0122, 0.1221, 0.0322, 0.1163, 0.2, -0.2944, 0.1163, 0, -0.3312, 0.3155, 0, -0.2162, 0.3155, 0, -0.2162, 0.2517, 0.4, -0.1794, 0.1163, 0.2, -0.2944, 0.2517, 0.4, -0.1794, 0.184, 0.4, -0.2185, 0.1163, 0.2, -0.2944, 0.184, 0.4, -0.2185, 0.2517, 0.4, -0.1794, 0.2517, 0.4, -0.0649, 0.2517, 0.4, -0.0649, 0.2154, 0.4, -0.002, 0.184, 0.4, -0.2185, 0.2154, 0.4, -0.002, 0.1163, 0.4, 0.0552, 0.184, 0.4, -0.2185, 0.1163, 0.4, 0.0552, 0.0486, 0.4, -0.2185, 0.184, 0.4, -0.2185, 0.1163, 0.4, 0.0552, -0.0192, 0.4, -0.023, 0.0486, 0.4, -0.2185, -0.0192, 0.4, -0.023, -0.0192, 0.4, -0.1794, 0.0486, 0.4, -0.2185, 0.2253, 0, 0.3312, 0.3265, 0, 0.1559, 0.2623, 0, 0.0446, 0.1163, 0, -0.3312, 0.2253, 0, 0.3312, 0.2623, 0, 0.0446, 0.1163, 0, -0.3312, 0.0229, 0, 0.3312, 0.2253, 0, 0.3312, 0.3155, 0, -0.2162, 0.1163, 0, -0.3312, 0.2623, 0, 0.0446, 0.2623, 0, 0.0446, 0.3155, 0, 0.0138, 0.3155, 0, -0.2162, 0.1163, 0, -0.3312, -0.0829, 0, -0.2162, 0.0229, 0, 0.3312, -0.0829, 0, -0.2162, -0.0159, 0, 0.2638, 0.0229, 0, 0.3312, -0.0829, 0, -0.2162, -0.0829, 0, -0.1751, -0.0159, 0, 0.2638, -0.1075, 0, 0.3167, -0.0159, 0, 0.2638, -0.0829, 0, -0.1751, -0.0829, 0, -0.1751, -0.1075, 0, -0.1893, -0.1075, 0, 0.3167, -0.1075, 0, -0.1893, -0.3265, 0, 0.1902, -0.1075, 0, 0.3167, -0.1075, 0, -0.1893, -0.3265, 0, -0.0628, -0.3265, 0, 0.1902, 0.2274, 0.2675, 0.2155, 0.2274, 0.2675, 0.0963, 0.2942, 0.1338, 0.1559, 0.0369, 0.2675, 0.2431, 0.0922, 0.2675, 0.2751, 0.0391, 0.1338, 0.3031, 0.193, 0.2675, 0.0367, 0.1907, 0.2675, 0.0367, 0.1935, 0.2634, 0.0358, 0.193, 0.2675, 0.0367, 0.1935, 0.2634, 0.0358, 0.2623, 0, 0.0446, 0.2623, 0, 0.0446, 0.2274, 0.2675, 0.0963, 0.193, 0.2675, 0.0367, 0.2623, 0, 0.0446, 0.3265, 0, 0.1559, 0.2274, 0.2675, 0.0963, 0.3265, 0, 0.1559, 0.2942, 0.1338, 0.1559, 0.2274, 0.2675, 0.0963, 0.2274, 0.2675, 0.2155, 0.2942, 0.1338, 0.1559, 0.3265, 0, 0.1559, 0.3265, 0, 0.1559, 0.2253, 0, 0.3311, 0.2274, 0.2675, 0.2155, 0.2253, 0, 0.3311, 0.193, 0.2675, 0.2751, 0.2274, 0.2675, 0.2155, -0.0288, 0.1221, 0.1903, -0.0487, 0.1221, 0.1559, -0.0135, 0.2675, 0.1559, -0.0135, 0.2675, 0.1559, 0.0369, 0.2675, 0.2431, -0.0288, 0.1221, 0.1903, 0.0369, 0.2675, 0.2431, -0.0159, 0, 0.2638, -0.0288, 0.1221, 0.1903, 0.0369, 0.2675, 0.2431, 0.0391, 0.1338, 0.3031, -0.0159, 0, 0.2638, 0.0391, 0.1338, 0.3031, 0.0229, 0, 0.3311, -0.0159, 0, 0.2638, 0.193, 0.2675, 0.0367, 0.2274, 0.2675, 0.0963, 0.2274, 0.2675, 0.2155, 0.2274, 0.2675, 0.2155, 0.193, 0.2675, 0.2751, 0.193, 0.2675, 0.0367, 0.193, 0.2675, 0.2751, 0.1907, 0.2675, 0.0367, 0.193, 0.2675, 0.0367, 0.193, 0.2675, 0.2751, 0.0922, 0.2675, 0.2751, 0.1907, 0.2675, 0.0367, 0.0922, 0.2675, 0.2751, 0.1163, 0.2675, 0.0796, 0.1907, 0.2675, 0.0367, 0.0922, 0.2675, 0.2751, 0.052, 0.2675, 0.0425, 0.1163, 0.2675, 0.0796, 0.0922, 0.2675, 0.2751, 0.0369, 0.2675, 0.2431, 0.052, 0.2675, 0.0425, 0.0369, 0.2675, 0.2431, -0.0135, 0.2675, 0.1559, 0.052, 0.2675, 0.0425, 0.193, 0.2675, 0.2751, 0.2253, 0, 0.3311, 0.0229, 0, 0.3311, 0.0229, 0, 0.3311, 0.0391, 0.1338, 0.3031, 0.193, 0.2675, 0.2751, 0.0391, 0.1338, 0.3031, 0.0922, 0.2675, 0.2751, 0.193, 0.2675, 0.2751, 0.014, 0.1221, 0.0473, 0.052, 0.2675, 0.0425, -0.0135, 0.2675, 0.1559, -0.0135, 0.2675, 0.1559, -0.0487, 0.1221, 0.1559, 0.014, 0.1221, 0.0473)
+
+[node name="Blocks" type="Node3D"]
+
+[node name="arrow2" parent="." instance=ExtResource("1_p44sm")]
+visible = false
+
+[node name="arrows2" parent="." instance=ExtResource("2_7lc4v")]
+visible = false
+
+[node name="barrel2" parent="." instance=ExtResource("3_i73o7")]
+visible = false
+
+[node name="block-grass-corner-low2" parent="." instance=ExtResource("4_phvnk")]
+visible = false
+
+[node name="block-grass-corner-overhang-low2" parent="." instance=ExtResource("5_iqnn4")]
+visible = false
+
+[node name="block-grass-corner-overhang2" parent="." instance=ExtResource("6_g1utt")]
+visible = false
+
+[node name="block-grass-corner2" parent="." instance=ExtResource("7_kpxpm")]
+visible = false
+
+[node name="block-grass-curve-half2" parent="." instance=ExtResource("8_jauy5")]
+visible = false
+
+[node name="block-grass-curve-low2" parent="." instance=ExtResource("9_h5533")]
+visible = false
+
+[node name="block-grass-curve2" parent="." instance=ExtResource("10_eapth")]
+visible = false
+
+[node name="block-grass-edge2" parent="." instance=ExtResource("11_feiec")]
+visible = false
+
+[node name="block-grass-hexagon2" parent="." instance=ExtResource("12_c6dkp")]
+visible = false
+
+[node name="block-grass-large-slope-steep-narrow2" parent="." instance=ExtResource("14_dkqk2")]
+visible = false
+
+[node name="block-grass-large-slope-steep2" parent="." instance=ExtResource("15_oc8jw")]
+visible = false
+
+[node name="block-grass-large-slope2" parent="." instance=ExtResource("16_nikct")]
+visible = false
+
+[node name="block-grass-large-tall2" parent="." instance=ExtResource("17_meoss")]
+visible = false
+
+[node name="block-grass-large2" parent="." instance=ExtResource("18_sc0vu")]
+visible = false
+
+[node name="block-grass-long2" parent="." instance=ExtResource("19_bcajx")]
+visible = false
+
+[node name="block-grass-low-hexagon2" parent="." instance=ExtResource("20_3idcp")]
+visible = false
+
+[node name="block-grass-low-large2" parent="." instance=ExtResource("21_lje5h")]
+visible = false
+
+[node name="block-grass-low-long2" parent="." instance=ExtResource("22_lamg5")]
+visible = false
+
+[node name="block-grass-low-narrow2" parent="." instance=ExtResource("23_tf2x5")]
+visible = false
+
+[node name="block-grass-low2" parent="." instance=ExtResource("24_kl8oc")]
+visible = false
+
+[node name="block-grass-narrow2" parent="." instance=ExtResource("25_35hec")]
+visible = false
+
+[node name="block-grass-overhang-corner2" parent="." instance=ExtResource("26_hw5uf")]
+visible = false
+
+[node name="block-grass-overhang-edge2" parent="." instance=ExtResource("27_e1eqf")]
+visible = false
+
+[node name="block-grass-overhang-hexagon2" parent="." instance=ExtResource("28_hipwh")]
+visible = false
+
+[node name="block-grass-overhang-large-slope-narrow2" parent="." instance=ExtResource("29_h8p6b")]
+visible = false
+
+[node name="block-grass-overhang-large-slope-steep-narrow2" parent="." instance=ExtResource("30_h3gp7")]
+visible = false
+
+[node name="block-grass-large-slope-narrow2" parent="block-grass-overhang-large-slope-steep-narrow2" instance=ExtResource("13_0xl8d")]
+visible = false
+
+[node name="block-grass-overhang-large-slope-steep2" parent="." instance=ExtResource("31_nnx4v")]
+visible = false
+
+[node name="block-grass-overhang-large-slope2" parent="." instance=ExtResource("32_bts26")]
+visible = false
+
+[node name="block-grass-overhang-large-tall2" parent="." instance=ExtResource("33_3op1w")]
+visible = false
+
+[node name="block-grass-overhang-large2" parent="." instance=ExtResource("34_lqepx")]
+visible = false
+
+[node name="block-grass-overhang-long2" parent="." instance=ExtResource("35_dxfip")]
+visible = false
+
+[node name="block-grass-overhang-low-hexagon2" parent="." instance=ExtResource("36_mmpfv")]
+visible = false
+
+[node name="block-grass-overhang-low-large2" parent="." instance=ExtResource("37_2u4sx")]
+visible = false
+
+[node name="block-grass-overhang-low-long2" parent="." instance=ExtResource("38_2c535")]
+visible = false
+
+[node name="block-grass-overhang-low-narrow2" parent="." instance=ExtResource("39_y0iug")]
+visible = false
+
+[node name="block-grass-overhang-low2" parent="." instance=ExtResource("40_sh056")]
+visible = false
+
+[node name="block-grass-overhang-narrow2" parent="." instance=ExtResource("41_1b2j8")]
+visible = false
+
+[node name="block-grass2" parent="." instance=ExtResource("42_hqe81")]
+visible = false
+
+[node name="block-moving-blue2" parent="." instance=ExtResource("43_0mkpc")]
+visible = false
+
+[node name="block-moving-large2" parent="." instance=ExtResource("44_jm3kh")]
+visible = false
+
+[node name="block-moving2" parent="." instance=ExtResource("45_48lbc")]
+visible = false
+
+[node name="block-snow-corner-low2" parent="." instance=ExtResource("46_pn546")]
+visible = false
+
+[node name="block-snow-corner-overhang-low2" parent="." instance=ExtResource("47_ruma0")]
+visible = false
+
+[node name="block-snow-corner-overhang2" parent="." instance=ExtResource("48_nc415")]
+visible = false
+
+[node name="block-snow-corner2" parent="." instance=ExtResource("49_rwaby")]
+visible = false
+
+[node name="block-snow-curve-half2" parent="." instance=ExtResource("50_vndlw")]
+visible = false
+
+[node name="block-snow-curve-low2" parent="." instance=ExtResource("51_8os3n")]
+visible = false
+
+[node name="block-snow-curve2" parent="." instance=ExtResource("52_n5o74")]
+visible = false
+
+[node name="block-snow-edge2" parent="." instance=ExtResource("53_b37po")]
+visible = false
+
+[node name="block-snow-hexagon2" parent="." instance=ExtResource("54_x42a7")]
+visible = false
+
+[node name="block-snow-large-slope-narrow2" parent="." instance=ExtResource("55_8jp8c")]
+visible = false
+
+[node name="block-snow-large-slope-steep-narrow2" parent="." instance=ExtResource("56_a2lp7")]
+visible = false
+
+[node name="block-snow-large-slope-steep2" parent="." instance=ExtResource("57_owhon")]
+visible = false
+
+[node name="block-snow-large-slope2" parent="." instance=ExtResource("58_th2sl")]
+visible = false
+
+[node name="block-snow-large-tall2" parent="." instance=ExtResource("59_y0nna")]
+visible = false
+
+[node name="block-snow-large2" parent="." instance=ExtResource("60_f1oyj")]
+visible = false
+
+[node name="block-snow-long2" parent="." instance=ExtResource("61_tq1f1")]
+visible = false
+
+[node name="block-snow-low-hexagon2" parent="." instance=ExtResource("62_gusxa")]
+visible = false
+
+[node name="block-snow-low-large2" parent="." instance=ExtResource("63_cwtxx")]
+visible = false
+
+[node name="block-snow-low-long2" parent="." instance=ExtResource("64_224wj")]
+visible = false
+
+[node name="block-snow-low-narrow2" parent="." instance=ExtResource("65_sqouo")]
+visible = false
+
+[node name="block-snow-low2" parent="." instance=ExtResource("66_662nn")]
+visible = false
+
+[node name="block-snow-narrow2" parent="." instance=ExtResource("67_wqp7i")]
+visible = false
+
+[node name="block-snow-overhang-corner2" parent="." instance=ExtResource("68_amipf")]
+visible = false
+
+[node name="block-snow-overhang-edge2" parent="." instance=ExtResource("69_am8hy")]
+visible = false
+
+[node name="block-snow-overhang-hexagon2" parent="." instance=ExtResource("70_il7l4")]
+visible = false
+
+[node name="block-snow-overhang-large-slope-narrow2" parent="." instance=ExtResource("71_miidj")]
+visible = false
+
+[node name="block-snow-overhang-large-slope-steep-narrow2" parent="." instance=ExtResource("72_m2amb")]
+visible = false
+
+[node name="block-snow-overhang-large-slope-steep2" parent="." instance=ExtResource("73_v0mr3")]
+visible = false
+
+[node name="block-snow-overhang-large-slope2" parent="." instance=ExtResource("74_0d42j")]
+visible = false
+
+[node name="block-snow-overhang-large-tall2" parent="." instance=ExtResource("75_wqxqc")]
+visible = false
+
+[node name="block-snow-overhang-large2" parent="." instance=ExtResource("76_627xl")]
+visible = false
+
+[node name="block-snow-overhang-long2" parent="." instance=ExtResource("77_rk2in")]
+visible = false
+
+[node name="block-snow-overhang-low-hexagon2" parent="." instance=ExtResource("78_05uxr")]
+visible = false
+
+[node name="block-snow-overhang-low-large2" parent="." instance=ExtResource("79_vlclf")]
+visible = false
+
+[node name="block-snow-overhang-low-long2" parent="." instance=ExtResource("80_fxvsc")]
+visible = false
+
+[node name="block-snow-overhang-low-narrow2" parent="." instance=ExtResource("81_d78n4")]
+visible = false
+
+[node name="block-snow-overhang-low2" parent="." instance=ExtResource("82_1hork")]
+visible = false
+
+[node name="block-snow-overhang-narrow2" parent="." instance=ExtResource("83_laix0")]
+visible = false
+
+[node name="block-snow2" parent="." instance=ExtResource("84_3gck4")]
+visible = false
+
+[node name="bomb2" parent="." instance=ExtResource("85_ar2ag")]
+visible = false
+
+[node name="button-round2" parent="." instance=ExtResource("86_s7a8s")]
+visible = false
+
+[node name="button-square2" parent="." instance=ExtResource("87_3ggbo")]
+visible = false
+
+[node name="chest2" parent="." instance=ExtResource("88_8df0l")]
+visible = false
+
+[node name="coin-bronze2" parent="." instance=ExtResource("89_g1xa4")]
+visible = false
+
+[node name="coin-gold2" parent="." instance=ExtResource("90_4ybj3")]
+visible = false
+
+[node name="coin-silver2" parent="." instance=ExtResource("91_2dky6")]
+visible = false
+
+[node name="crate-item-strong2" parent="." instance=ExtResource("92_m055b")]
+visible = false
+
+[node name="crate-item2" parent="." instance=ExtResource("93_wotsb")]
+visible = false
+
+[node name="crate-strong2" parent="." instance=ExtResource("94_j7q8e")]
+visible = false
+
+[node name="crate2" parent="." instance=ExtResource("95_whqws")]
+visible = false
+
+[node name="door-large-open2" parent="." instance=ExtResource("96_w00sy")]
+visible = false
+
+[node name="door-open2" parent="." instance=ExtResource("97_t8nfq")]
+visible = false
+
+[node name="door-rotate-large2" parent="." instance=ExtResource("98_gxpp4")]
+visible = false
+
+[node name="door-rotate2" parent="." instance=ExtResource("99_it7pk")]
+visible = false
+
+[node name="fence-broken2" parent="." instance=ExtResource("100_48nmv")]
+visible = false
+
+[node name="fence-corner-curved2" parent="." instance=ExtResource("101_c181l")]
+visible = false
+
+[node name="fence-corner2" parent="." instance=ExtResource("102_65yk1")]
+visible = false
+
+[node name="fence-low-broken2" parent="." instance=ExtResource("103_lelwg")]
+visible = false
+
+[node name="fence-low-corner-curved2" parent="." instance=ExtResource("104_cs0dq")]
+visible = false
+
+[node name="fence-low-corner2" parent="." instance=ExtResource("105_r4s0i")]
+visible = false
+
+[node name="fence-low-straight2" parent="." instance=ExtResource("106_ek4ph")]
+visible = false
+
+[node name="fence-straight2" parent="." instance=ExtResource("107_giahe")]
+visible = false
+
+[node name="flag2" parent="." instance=ExtResource("108_8nn18")]
+visible = false
+
+[node name="flowers-tall2" parent="." instance=ExtResource("109_cl3sy")]
+visible = false
+
+[node name="flowers" parent="." instance=ExtResource("110_iwvud")]
+visible = false
+
+[node name="grass2" parent="." instance=ExtResource("111_voqek")]
+visible = false
+
+[node name="heart2" parent="." instance=ExtResource("112_3ccih")]
+visible = false
+
+[node name="hedge-corner2" parent="." instance=ExtResource("113_lwhlk")]
+visible = false
+
+[node name="hedge2" parent="." instance=ExtResource("114_8e3ub")]
+visible = false
+
+[node name="jewel2" parent="." instance=ExtResource("115_6d876")]
+visible = false
+
+[node name="key2" parent="." instance=ExtResource("116_bvajo")]
+visible = false
+
+[node name="ladder-broken2" parent="." instance=ExtResource("117_8fxjd")]
+visible = false
+
+[node name="ladder-long2" parent="." instance=ExtResource("118_d6d0x")]
+visible = false
+
+[node name="ladder2" parent="." instance=ExtResource("119_p0r81")]
+visible = false
+
+[node name="lever2" parent="." instance=ExtResource("120_iwqbm")]
+visible = false
+
+[node name="lock2" parent="." instance=ExtResource("121_2x1n8")]
+visible = false
+
+[node name="mushrooms2" parent="." instance=ExtResource("122_ry8iu")]
+visible = false
+
+[node name="plant2" parent="." instance=ExtResource("123_j0rsi")]
+visible = false
+
+[node name="platform-fortified2" parent="." instance=ExtResource("124_xpdcm")]
+visible = false
+
+[node name="platform-overhang2" parent="." instance=ExtResource("125_c1o0f")]
+visible = false
+
+[node name="platform-ramp2" parent="." instance=ExtResource("126_kvhsm")]
+visible = false
+
+[node name="platform2" parent="." instance=ExtResource("127_d5b4l")]
+visible = false
+
+[node name="poles2" parent="." instance=ExtResource("128_ibywx")]
+visible = false
+
+[node name="rocks2" type="Node3D" parent="."]
+visible = false
+
+[node name="rocks" type="MeshInstance3D" parent="rocks2"]
+mesh = SubResource("ArrayMesh_mi8tj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rocks2/rocks"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rocks2/rocks/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_333vw")
+
+[node name="saw2" parent="." instance=ExtResource("130_wd52n")]
+visible = false
+
+[node name="sign2" parent="." instance=ExtResource("131_4b20f")]
+visible = false
+
+[node name="spike-block-wide2" parent="." instance=ExtResource("132_ug8jm")]
+visible = false
+
+[node name="spike-block2" parent="." instance=ExtResource("133_4v3ee")]
+visible = false
+
+[node name="stones2" parent="." instance=ExtResource("134_nsdp1")]
+visible = false
+
+[node name="trap-spikes-large2" parent="." instance=ExtResource("135_ugu1b")]
+visible = false
+
+[node name="trap-spikes2" parent="." instance=ExtResource("136_xtxfe")]
+visible = false
+
+[node name="tree-pine-small2" parent="." instance=ExtResource("137_1euna")]
+visible = false
+
+[node name="tree-pine-snow-small2" parent="." instance=ExtResource("138_evh3v")]
+visible = false
+
+[node name="tree-pine-snow2" parent="." instance=ExtResource("139_cesw2")]
+visible = false
+
+[node name="tree-pine2" parent="." instance=ExtResource("140_vxcqi")]
+visible = false
+
+[node name="tree-snow2" parent="." instance=ExtResource("141_brwbm")]
+visible = false
+
+[node name="tree2" parent="." instance=ExtResource("142_p5cm7")]
+visible = false

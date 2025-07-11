@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1ej7jquy3ccx"
+path="res://.godot/imported/bridge_woodRound.obj-ab242a765a1b3a4c923047e78fb5bc0b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_woodRound.obj-ab242a765a1b3a4c923047e78fb5bc0b.mesh"]
+
+source_file="res://assets/nature-kit/Models/OBJ format/bridge_woodRound.obj"
+dest_files=["res://.godot/imported/bridge_woodRound.obj-ab242a765a1b3a4c923047e78fb5bc0b.mesh", "res://.godot/imported/bridge_woodRound.obj-ab242a765a1b3a4c923047e78fb5bc0b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

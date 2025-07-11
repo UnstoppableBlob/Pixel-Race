@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bl1d4g00wyn6a"
+path="res://.godot/imported/ground_riverBendBank.obj-f2d8882d77aaf08977daf59954b942ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverBendBank.obj-f2d8882d77aaf08977daf59954b942ce.mesh"]
+
+source_file="res://assets/nature-kit/Models/OBJ format/ground_riverBendBank.obj"
+dest_files=["res://.godot/imported/ground_riverBendBank.obj-f2d8882d77aaf08977daf59954b942ce.mesh", "res://.godot/imported/ground_riverBendBank.obj-f2d8882d77aaf08977daf59954b942ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

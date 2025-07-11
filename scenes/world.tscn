@@ -1,7 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwp5ax0gjxcxu"]
+[gd_scene load_steps=3 format=3 uid="uid://bwp5ax0gjxcxu"]
 
 [ext_resource type="PackedScene" uid="uid://bke7h5il4h4wt" path="res://scenes/player.tscn" id="1_w15bk"]
+[ext_resource type="MeshLibrary" uid="uid://ddubayvpah7r" path="res://assets/blocks/blocks2.tres" id="2_cbj7p"]
 
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_w15bk")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 10, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="Player"]
+current = true
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_cbj7p")
+cell_size = Vector3(0.5, 0.25, 0.5)
+data = {
+"cells": PackedInt32Array(65535, 0, 190)
+}

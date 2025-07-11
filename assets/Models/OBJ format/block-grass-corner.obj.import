@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctkyxd3hrfwoh"
+path="res://.godot/imported/block-grass-corner.obj-75fe50790ebce44dede87ded4ef35921.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-grass-corner.obj-75fe50790ebce44dede87ded4ef35921.mesh"]
+
+source_file="res://assets/Models/OBJ format/block-grass-corner.obj"
+dest_files=["res://.godot/imported/block-grass-corner.obj-75fe50790ebce44dede87ded4ef35921.mesh", "res://.godot/imported/block-grass-corner.obj-75fe50790ebce44dede87ded4ef35921.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

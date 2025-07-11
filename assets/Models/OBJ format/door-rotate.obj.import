@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bunncpwry1lfx"
+path="res://.godot/imported/door-rotate.obj-e66372203eb8ea6313aa71b6ecb34899.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-rotate.obj-e66372203eb8ea6313aa71b6ecb34899.mesh"]
+
+source_file="res://assets/Models/OBJ format/door-rotate.obj"
+dest_files=["res://.godot/imported/door-rotate.obj-e66372203eb8ea6313aa71b6ecb34899.mesh", "res://.godot/imported/door-rotate.obj-e66372203eb8ea6313aa71b6ecb34899.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
