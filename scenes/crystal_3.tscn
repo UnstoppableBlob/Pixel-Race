@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxds3kf1rxi4f"]
+
+[ext_resource type="PackedScene" uid="uid://bkwcu0wpy1sfj" path="res://assets/crystal/crystal3.glb" id="1_2labh"]
+
+[node name="Node3D" instance=ExtResource("1_2labh")]

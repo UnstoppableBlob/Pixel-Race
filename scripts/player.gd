@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("spacebar") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 	
 	# Handle Sprint.
 	if Input.is_action_pressed("sprint"):
@@ -92,3 +92,8 @@ func _run_body_test_motion(from : Transform3D, motion : Vector3, result = null) 
 	params.motion = motion
 	return PhysicsServer3D.body_test_motion(self.get_rid(), params, result)
 	
+func jump():
+	velocity.y = JUMP_VELOCITY
+	
+func player():
+	pass
