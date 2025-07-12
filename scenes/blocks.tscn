@@ -1194,7 +1194,6 @@ visible = false
 visible = false
 
 [node name="block-grass-edge2" type="Node3D" parent="."]
-visible = false
 
 [node name="block-grass-edge" type="MeshInstance3D" parent="block-grass-edge2"]
 mesh = SubResource("ArrayMesh_jnfft")

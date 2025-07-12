@@ -3,7 +3,7 @@ extends CharacterBody3D
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
-const JUMP_VELOCITY = 4.8
+const JUMP_VELOCITY = 6
 const SENSITIVITY = 0.004
 
 #bob variables
@@ -16,14 +16,19 @@ const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 13
+var gravity = 15
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var interaction = $Head/Camera3D/interaction
+@onready var hand = $Head/Camera3D/hand
 
+var picked_object
+var pull_power = 4
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	global.player = self
 
 
 func _unhandled_input(event):
@@ -34,12 +39,18 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("grab"):
+		if picked_object == null:
+			pick_object()
+		elif picked_object != null:
+			remove_object()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("spacebar") and is_on_floor():
+	if Input.is_action_pressed("spacebar") and is_on_floor():
 		jump()
 	
 	# Handle Sprint.
@@ -71,6 +82,13 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
+	
+	if picked_object != null:
+		var a = picked_object.global_transform.origin
+		var b = hand.global_transform.origin
+		picked_object.set_linear_velocity((b-a)* pull_power) 
+	
+	
 	move_and_slide()
 
 
@@ -97,3 +115,21 @@ func jump():
 	
 func player():
 	pass
+
+
+func pick_object():
+	var collider = interaction.get_collider()
+	if collider != null and collider is RigidBody3D:
+		picked_object = collider
+
+
+func remove_object():
+	if picked_object != null:
+		picked_object = null
+
+
+func is_holding_object():
+	if picked_object != null:
+		return true
+	else:
+		return false
