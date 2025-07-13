@@ -26,6 +26,8 @@ var gravity = 15
 var picked_object
 var pull_power = 4
 
+var first_time_picking_crate = true
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	global.player = self
@@ -121,6 +123,9 @@ func pick_object():
 	var collider = interaction.get_collider()
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
+	
+	global.stage = 3
+	print(global.stage)
 
 
 func remove_object():

@@ -1,21 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwp5ax0gjxcxu"]
+[gd_scene load_steps=13 format=3 uid="uid://bwp5ax0gjxcxu"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_r7hdv"]
 [ext_resource type="PackedScene" uid="uid://bke7h5il4h4wt" path="res://scenes/player.tscn" id="1_w15bk"]
 [ext_resource type="MeshLibrary" uid="uid://bdiychwvli1fl" path="res://assets/blocks/blocks1platformcolfix.tres" id="2_0ulco"]
-[ext_resource type="PackedScene" uid="uid://b80r0cxb5hr86" path="res://scenes/crate1kg.tscn" id="3_yv3ss"]
 [ext_resource type="PackedScene" uid="uid://di2i1djawqjjr" path="res://scenes/plate.tscn" id="4_6e42g"]
+[ext_resource type="Script" path="res://scripts/rigid_body_3d.gd" id="4_dagby"]
+[ext_resource type="PackedScene" uid="uid://ct8vox7yds4xr" path="res://assets/Models/GLB format/crate.glb" id="5_ltwxb"]
+[ext_resource type="Script" path="res://scripts/stage_test2.gd" id="9_om408"]
 
 [sub_resource type="Environment" id="Environment_ipiix"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.35
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_khk7c"]
+viewport_path = NodePath("Crate/Sprite3D2/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhbtd"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2smtu"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dovgy"]
+size = Vector3(0.1, 3, 3)
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_r7hdv")
 
 [node name="Player" parent="." instance=ExtResource("1_w15bk")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 10, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.4204, 14.1401, -1.0966)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(0.998571, 0, 0, 0, 0.998571, 0, 0, 0, 0.998571, 0, 0, 0)
@@ -29,8 +43,60 @@ metadata/_editor_floor_ = Vector3(0, 4, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ipiix")
 
-[node name="Crate" parent="." instance=ExtResource("3_yv3ss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96279, 57.099, 0.00890541)
+[node name="Crate" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6995, 2.86131, 1.76592)
+
+[node name="Sprite3D2" type="Sprite3D" parent="Crate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.701401, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_khk7c")
+
+[node name="SubViewport" type="SubViewport" parent="Crate/Sprite3D2"]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+
+[node name="Label" type="Label" parent="Crate/Sprite3D2/SubViewport"]
+offset_right = 1024.0
+offset_bottom = 1024.0
+text = "Now, try clicking on the crate to pick it up. Click again to drop me on top of the pressure plate."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Crate" groups=["crates"]]
+script = ExtResource("4_dagby")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate/RigidBody3D"]
+shape = SubResource("BoxShape3D_mhbtd")
+
+[node name="crate2" parent="Crate/RigidBody3D" instance=ExtResource("5_ltwxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="plate" parent="." instance=ExtResource("4_6e42g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.334089, 1.21524, 1.90481)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91035, 2.24901, -3.14182)
+billboard = 1
+texture = SubResource("ViewportTexture_2smtu")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport"]
+offset_right = 1024.0
+offset_bottom = 1024.0
+text = "First, try out the controls. Use WASD and the spacebar to get to the other island!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stagetest2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98984, 1.52039, -1.5471)
+
+[node name="Area3D" type="Area3D" parent="stagetest2"]
+script = ExtResource("9_om408")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stagetest2/Area3D"]
+shape = SubResource("BoxShape3D_dovgy")
+
+[connection signal="body_entered" from="stagetest2/Area3D" to="stagetest2/Area3D" method="_on_body_entered"]
