@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b80r0cxb5hr86"]
+[gd_scene load_steps=5 format=3 uid="uid://b80r0cxb5hr86"]
 
 [ext_resource type="Script" path="res://scripts/rigid_body_3d.gd" id="1_cnwvr"]
 [ext_resource type="PackedScene" uid="uid://ct8vox7yds4xr" path="res://assets/Models/GLB format/crate.glb" id="1_sgpbx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vj2v8"]
+bounce = 0.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_445n2"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -9,6 +12,7 @@ size = Vector3(0.5, 0.5, 0.5)
 [node name="Crate" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." groups=["crates"]]
+physics_material_override = SubResource("PhysicsMaterial_vj2v8")
 script = ExtResource("1_cnwvr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
@@ -16,3 +20,5 @@ shape = SubResource("BoxShape3D_445n2")
 
 [node name="crate2" parent="RigidBody3D" instance=ExtResource("1_sgpbx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[connection signal="body_exited" from="RigidBody3D" to="RigidBody3D" method="_on_body_exited"]

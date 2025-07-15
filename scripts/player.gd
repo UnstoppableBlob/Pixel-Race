@@ -23,8 +23,7 @@ var gravity = 15
 
 var picked_object
 var pull_power = 4
-
-var first_time_picking_crate = true
+var charge = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -44,7 +43,17 @@ func _physics_process(delta):
 			pick_object()
 		elif picked_object != null:
 			remove_object()
-	
+			
+	if Input.is_action_pressed("right_click"):
+		if picked_object != null:
+			charge += 0.2
+			if charge > 10:
+				throw()
+				
+	if Input.is_action_just_released("right_click"):
+		if picked_object != null:
+			throw()
+			
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -115,6 +124,7 @@ func pick_object():
 	var collider = interaction.get_collider()
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
+		picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
 
 
 func remove_object():
@@ -122,8 +132,17 @@ func remove_object():
 		picked_object = null
 
 
+
 func is_holding_object():
 	if picked_object != null:
 		return true
 	else:
 		return false
+
+
+func throw():
+	var knockback = picked_object.global_position - global_position
+	picked_object.apply_central_impulse(knockback * charge)
+	picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
+	remove_object()
+	charge = 0
