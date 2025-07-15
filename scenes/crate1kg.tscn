@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/rigid_body_3d.gd" id="1_cnwvr"]
 [ext_resource type="PackedScene" uid="uid://ct8vox7yds4xr" path="res://assets/Models/GLB format/crate.glb" id="1_sgpbx"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mhbtd"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_445n2"]
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Crate" type="Node3D"]
@@ -12,7 +12,7 @@ size = Vector3(0.5, 0.5, 0.5)
 script = ExtResource("1_cnwvr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_mhbtd")
+shape = SubResource("BoxShape3D_445n2")
 
 [node name="crate2" parent="RigidBody3D" instance=ExtResource("1_sgpbx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)

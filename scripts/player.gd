@@ -115,9 +115,6 @@ func pick_object():
 	var collider = interaction.get_collider()
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
-	
-	global.stage = 3
-	print(global.stage)
 
 
 func remove_object():
