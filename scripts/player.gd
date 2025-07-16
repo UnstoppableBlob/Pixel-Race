@@ -31,9 +31,15 @@ var trajectory_mesh_instance: MeshInstance3D
 var trajectory_immediate_mesh: ImmediateMesh
 var trajectory_material: StandardMaterial3D
 
+@onready var trajectory_end_sphere: MeshInstance3D = null
+
 const TRAJECTORY_POINTS = 100
 const THROW_VELOCITY_MULTIPLIER = 2.5
 const TRAJECTORY_VISUAL_BOOST = 1.2
+const TRAJECTORY_SPHERE_RADIUS = 0.1
+
+const LINE_THICKNESS_SIMULATION_COUNT = 3
+const LINE_THICKNESS_OFFSET = 0.01
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -45,13 +51,31 @@ func _ready():
 	
 	trajectory_material = StandardMaterial3D.new()
 	trajectory_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	trajectory_material.albedo_color = Color(1.0, 0.5, 0.0, 1.0)
+	trajectory_material.albedo_color = Color(0.0, 1.0, 0.0, 1.0)
 	trajectory_material.cull_mode = BaseMaterial3D.CULL_DISABLED
 	trajectory_material.vertex_color_use_as_albedo = true
 	
 	trajectory_mesh_instance.set_surface_override_material(0, trajectory_material)
 
 	hand.add_child(trajectory_mesh_instance)
+	# Set the trajectory line to be hidden by default
+	trajectory_mesh_instance.visible = false
+
+	trajectory_end_sphere = MeshInstance3D.new()
+	var sphere_mesh = SphereMesh.new()
+	sphere_mesh.radius = TRAJECTORY_SPHERE_RADIUS
+	sphere_mesh.height = TRAJECTORY_SPHERE_RADIUS * 2
+	sphere_mesh.radial_segments = 8
+	sphere_mesh.rings = 4
+	trajectory_end_sphere.mesh = sphere_mesh
+	
+	var sphere_material = StandardMaterial3D.new()
+	sphere_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	sphere_material.albedo_color = Color(0.0, 1.0, 0.0, 1.0)
+	trajectory_end_sphere.set_surface_override_material(0, sphere_material)
+	
+	hand.add_child(trajectory_end_sphere)
+	trajectory_end_sphere.visible = false
 
 
 func _unhandled_input(event):
@@ -120,9 +144,11 @@ func _physics_process(delta):
 		if Input.is_action_pressed("right_click"):
 			_draw_trajectory(delta)
 		else:
-			trajectory_immediate_mesh.clear_surfaces()
+			# No need to clear surfaces if the mesh instance is hidden
+			trajectory_end_sphere.visible = false
 	else:
-		trajectory_immediate_mesh.clear_surfaces()
+		# No need to clear surfaces if the mesh instance is hidden
+		trajectory_end_sphere.visible = false
 
 	move_and_slide()
 
@@ -164,7 +190,8 @@ func remove_object():
 	if picked_object != null:
 		picked_object = null
 		holding_object.emit(false)
-		trajectory_immediate_mesh.clear_surfaces()
+		# No need to clear surfaces if the mesh instance is hidden
+		trajectory_end_sphere.visible = false
 
 
 func is_holding_object():
@@ -187,12 +214,13 @@ func throw():
 
 func _draw_trajectory(trajectory_time_step: float):
 	if picked_object == null:
-		trajectory_immediate_mesh.clear_surfaces()
+		trajectory_end_sphere.visible = false
 		return
 
-	trajectory_immediate_mesh.clear_surfaces()
-	
-	trajectory_immediate_mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+	# We don't call clear_surfaces() or surface_begin/end here for the line,
+	# effectively keeping it hidden.
+	# trajectory_immediate_mesh.clear_surfaces()
+	# trajectory_immediate_mesh.surface_begin(Mesh.PRIMITIVE_LINES)
 
 	var start_position = hand.global_transform.origin
 	
@@ -210,7 +238,11 @@ func _draw_trajectory(trajectory_time_step: float):
 	
 	var space_state = get_world_3d().direct_space_state
 	
-	trajectory_immediate_mesh.surface_set_color(trajectory_material.albedo_color)
+	# trajectory_immediate_mesh.surface_set_color(trajectory_material.albedo_color)
+
+	var last_valid_position = start_position
+	
+	var camera_forward = -camera.global_transform.basis.z
 
 	for i in range(TRAJECTORY_POINTS):
 		var prev_position = current_position
@@ -228,15 +260,38 @@ func _draw_trajectory(trajectory_time_step: float):
 		
 		var result = space_state.intersect_ray(query)
 		
+		var segment_direction = (current_position - prev_position).normalized()
+		var perpendicular_offset_base = camera_forward.cross(segment_direction).normalized()
+
+		# Even though we're calculating vertices, they won't be drawn because
+		# trajectory_immediate_mesh.visible is set to false in _ready.
+		for j in range(LINE_THICKNESS_SIMULATION_COUNT):
+			var offset_amount = (j - (LINE_THICKNESS_SIMULATION_COUNT - 1) / 2.0) * LINE_THICKNESS_OFFSET
+			var current_offset_vector = perpendicular_offset_base * offset_amount
+
+			if result:
+				# These calls will store vertex data, but it won't be rendered
+				# because the MeshInstance3D's 'visible' property is false.
+				# trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(prev_position + current_offset_vector))
+				# trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(result.position + current_offset_vector))
+				pass
+			else:
+				# trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(prev_position + current_offset_vector))
+				# trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(current_position + current_offset_vector))
+				pass
+
 		if result:
-			trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(prev_position))
-			trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(result.position))
+			last_valid_position = result.position
 			break
 		
-		trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(prev_position))
-		trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(current_position))
+		last_valid_position = current_position
 		
 		if current_position.y < -100.0:
 			break
 
-	trajectory_immediate_mesh.surface_end()
+	# We don't call surface_end() here for the line
+	# trajectory_immediate_mesh.surface_end()
+	
+	if trajectory_end_sphere != null:
+		trajectory_end_sphere.global_transform.origin = last_valid_position
+		trajectory_end_sphere.visible = true
