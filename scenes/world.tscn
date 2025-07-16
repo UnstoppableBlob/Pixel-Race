@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bwp5ax0gjxcxu"]
+[gd_scene load_steps=29 format=4 uid="uid://bwp5ax0gjxcxu"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_r7hdv"]
 [ext_resource type="MeshLibrary" uid="uid://bdiychwvli1fl" path="res://assets/blocks/blocks1platformcolfix.tres" id="2_0ulco"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ct8vox7yds4xr" path="res://assets/Models/GLB format/crate.glb" id="5_ltwxb"]
 [ext_resource type="Script" path="res://scripts/area_3d2.gd" id="6_bes5l"]
 [ext_resource type="PackedScene" uid="uid://di2i1djawqjjr" path="res://scenes/plate.tscn" id="9_66414"]
+[ext_resource type="PackedScene" uid="uid://b1suv07447lk5" path="res://scenes/hud.tscn" id="9_kle61"]
 [ext_resource type="Script" path="res://scripts/stage_test2.gd" id="9_om408"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em8kf"]
@@ -29,7 +30,7 @@ size = Vector3(0.1, 3, 3)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a1cmx"]
 rough = true
-bounce = 0.15
+bounce = 0.05
 absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhbtd"]
@@ -191,6 +192,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5073, 3.42098, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate2" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -205,6 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5704, 3.42098, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate3" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -219,6 +222,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5704, 4.07874, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate4" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -233,6 +237,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2623, 5.08285, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate5" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -247,6 +252,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5031, 4.61816, -1.60567)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate6" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -261,6 +267,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5031, 6.47566, -0.57804)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate7" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -275,6 +282,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7192, 6.47566, -0.57804)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate8" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -289,6 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5073, 6.35034, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate9" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -303,6 +312,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5704, 6.35034, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate10" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -317,6 +327,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5704, 7.0081, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate11" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -331,6 +342,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2623, 8.01221, -2.70699)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate12" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -345,6 +357,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5031, 7.54752, -1.60567)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate13" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -359,6 +372,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5031, 9.40502, -0.57804)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate14" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -373,6 +387,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7192, 9.40502, -0.57804)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate15" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_a1cmx")
 script = ExtResource("4_dagby")
 
@@ -431,6 +446,8 @@ transform = Transform3D(0.620564, 0, 0, 0, 0.607285, 0, 0, 0, 0.620564, 62.7191,
 
 [node name="plate5" parent="plates" instance=ExtResource("9_66414")]
 transform = Transform3D(0.667243, 0, 0, 0, 0.649359, 0, 0, 0, 0.667243, 78.6676, 0.952871, 4.9924)
+
+[node name="HUD" parent="." instance=ExtResource("9_kle61")]
 
 [connection signal="body_entered" from="stagetest2/Area3D" to="stagetest2/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="plates/plate/Area3D" to="plates/plate/Area3D" method="_on_body_entered"]

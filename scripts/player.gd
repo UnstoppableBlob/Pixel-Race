@@ -10,24 +10,48 @@ const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
-#fov variables
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
 var gravity = 15
+
+signal charge_updated(charge_value)
+signal holding_object(is_holding)
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interaction = $Head/Camera3D/interaction
 @onready var hand = $Head/Camera3D/hand
 
-var picked_object
-var pull_power = 4
-var charge = 0
+var picked_object: RigidBody3D
+var pull_power = 4.0
+var charge = 0.0
+
+var trajectory_mesh_instance: MeshInstance3D
+var trajectory_immediate_mesh: ImmediateMesh
+var trajectory_material: StandardMaterial3D
+
+const TRAJECTORY_POINTS = 100
+const THROW_VELOCITY_MULTIPLIER = 2.5
+const TRAJECTORY_VISUAL_BOOST = 1.2
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	global.player = self
+	
+	trajectory_immediate_mesh = ImmediateMesh.new()
+	trajectory_mesh_instance = MeshInstance3D.new()
+	trajectory_mesh_instance.mesh = trajectory_immediate_mesh
+	
+	trajectory_material = StandardMaterial3D.new()
+	trajectory_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	trajectory_material.albedo_color = Color(1.0, 0.5, 0.0, 1.0)
+	trajectory_material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	trajectory_material.vertex_color_use_as_albedo = true
+	
+	trajectory_mesh_instance.set_surface_override_material(0, trajectory_material)
+
+	hand.add_child(trajectory_mesh_instance)
 
 
 func _unhandled_input(event):
@@ -41,13 +65,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("grab"):
 		if picked_object == null:
 			pick_object()
-		elif picked_object != null:
+		else:
 			remove_object()
 			
 	if Input.is_action_pressed("right_click"):
 		if picked_object != null:
-			charge += 0.2
-			if charge > 10:
+			charge += 0.2 * delta * 60
+			charge = min(charge, 10.0)
+			charge_updated.emit(charge)
+			if charge >= 10.0:
 				throw()
 				
 	if Input.is_action_just_released("right_click"):
@@ -67,6 +93,7 @@ func _physics_process(delta):
 
 	var input_dir = Input.get_vector("a", "d", "w", "s")
 	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if is_on_floor():
 		if direction:
 			velocity.x = direction.x * speed
@@ -85,13 +112,18 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
-	
 	if picked_object != null:
-		var a = picked_object.global_transform.origin
-		var b = hand.global_transform.origin
-		picked_object.set_linear_velocity((b-a)* pull_power) 
-	
-	
+		var target_pos = hand.global_transform.origin
+		var current_obj_pos = picked_object.global_transform.origin
+		picked_object.set_linear_velocity((target_pos - current_obj_pos) * pull_power)
+		
+		if Input.is_action_pressed("right_click"):
+			_draw_trajectory(delta)
+		else:
+			trajectory_immediate_mesh.clear_surfaces()
+	else:
+		trajectory_immediate_mesh.clear_surfaces()
+
 	move_and_slide()
 
 
@@ -125,24 +157,86 @@ func pick_object():
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
 		picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
+		holding_object.emit(true)
 
 
 func remove_object():
 	if picked_object != null:
 		picked_object = null
-
+		holding_object.emit(false)
+		trajectory_immediate_mesh.clear_surfaces()
 
 
 func is_holding_object():
-	if picked_object != null:
-		return true
-	else:
-		return false
+	return picked_object != null
 
 
 func throw():
-	var knockback = picked_object.global_position - global_position
-	picked_object.apply_central_impulse(knockback * charge)
+	if picked_object == null: return
+	
+	var throw_direction = (picked_object.global_position - global_position).normalized()
+	
+	picked_object.apply_central_impulse(throw_direction * charge * THROW_VELOCITY_MULTIPLIER)
+	
 	picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
+	
 	remove_object()
-	charge = 0
+	charge = 0.0
+	charge_updated.emit(charge)
+
+
+func _draw_trajectory(trajectory_time_step: float):
+	if picked_object == null:
+		trajectory_immediate_mesh.clear_surfaces()
+		return
+
+	trajectory_immediate_mesh.clear_surfaces()
+	
+	trajectory_immediate_mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+
+	var start_position = hand.global_transform.origin
+	
+	var throw_direction = (picked_object.global_position - global_position).normalized()
+	var impulse_magnitude = charge * THROW_VELOCITY_MULTIPLIER
+	
+	var initial_velocity = picked_object.linear_velocity + (throw_direction * impulse_magnitude) / picked_object.mass
+	
+	initial_velocity *= TRAJECTORY_VISUAL_BOOST
+
+	var current_position = start_position
+	var current_velocity = initial_velocity
+	
+	var linear_damp = picked_object.linear_damp
+	
+	var space_state = get_world_3d().direct_space_state
+	
+	trajectory_immediate_mesh.surface_set_color(trajectory_material.albedo_color)
+
+	for i in range(TRAJECTORY_POINTS):
+		var prev_position = current_position
+		
+		current_velocity *= exp(-linear_damp * trajectory_time_step)
+		
+		current_velocity.y -= gravity * trajectory_time_step
+		
+		current_position += current_velocity * trajectory_time_step
+
+		var query = PhysicsRayQueryParameters3D.new()
+		query.from = prev_position
+		query.to = current_position
+		query.exclude = [self.get_rid(), picked_object.get_rid()]
+		
+		var result = space_state.intersect_ray(query)
+		
+		if result:
+			trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(prev_position))
+			trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(result.position))
+			break
+		
+		trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(prev_position))
+		trajectory_immediate_mesh.surface_add_vertex(trajectory_mesh_instance.to_local(current_position))
+		
+		if current_position.y < -100.0:
+			break
+
+	trajectory_immediate_mesh.surface_end()
