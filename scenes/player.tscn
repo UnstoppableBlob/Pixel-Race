@@ -29,8 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, 0)
 cull_mask = 1048573
 current = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Head/Camera3D"]
-
 [node name="interaction" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -2.7)
 
