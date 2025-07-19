@@ -131,7 +131,7 @@ func _physics_process(delta):
 			charge = min(charge, 10.0)
 			charge_updated.emit(charge)
 			if charge >= 10.0:
-				throw()
+				charge = 10
 				
 	if Input.is_action_just_released("right_click"):
 		if picked_object != null:

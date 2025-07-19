@@ -1264,6 +1264,8 @@ mesh = SubResource("ArrayMesh_ucxcu")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass-corner2/block-grass-corner"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-corner2/block-grass-corner/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_w4jyj")
@@ -1285,6 +1287,8 @@ mesh = SubResource("ArrayMesh_jnfft")
 skeleton = NodePath("")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="block-grass-edge2/block-grass-edge"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-edge2/block-grass-edge/StaticBody3D4"]
 shape = SubResource("ConvexPolygonShape3D_g7181")
@@ -1297,6 +1301,8 @@ mesh = SubResource("ArrayMesh_wxgs4")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass-hexagon2/block-grass-hexagon"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-hexagon2/block-grass-hexagon/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_tgd6o")
@@ -1339,6 +1345,8 @@ mesh = SubResource("ArrayMesh_pkv2s")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass-low2/block-grass-low"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-low2/block-grass-low/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_nfdi4")
@@ -1406,6 +1414,8 @@ mesh = SubResource("ArrayMesh_17315")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass2/block-grass"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass2/block-grass/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_uhhjk")
@@ -1586,6 +1596,8 @@ mesh = SubResource("ArrayMesh_vjehh")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-snow2/block-snow"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow2/block-snow/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_kv7lf")
@@ -1650,6 +1662,8 @@ mesh = SubResource("ArrayMesh_rjvt0")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="fence-corner2/fence-corner"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fence-corner2/fence-corner/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ent2b")
@@ -1674,6 +1688,8 @@ mesh = SubResource("ArrayMesh_swwva")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="fence-straight2/fence-straight"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fence-straight2/fence-straight/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_65en7")
@@ -1761,8 +1777,10 @@ mesh = SubResource("ArrayMesh_ukr78")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="platform-fortified2/platform-fortified"]
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="platform-fortified2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platform-fortified2/platform-fortified/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_c8f7d")
 
 [node name="platform-overhang2" parent="." instance=ExtResource("125_c1o0f")]
@@ -1776,6 +1794,8 @@ mesh = SubResource("ArrayMesh_xm325")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="platform-ramp2/platform-ramp"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform-ramp2/platform-ramp/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_0gew7")
@@ -1788,6 +1808,8 @@ mesh = SubResource("ArrayMesh_lsqrw")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="platform2/platform"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform2/platform/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qwkdv")
@@ -1803,6 +1825,8 @@ mesh = SubResource("ArrayMesh_mi8tj")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="rocks2/rocks"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rocks2/rocks/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_333vw")
@@ -1836,6 +1860,8 @@ mesh = SubResource("ArrayMesh_n374l")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-small2/tree-pine-small"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-small2/tree-pine-small/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_r0v8s")
@@ -1848,6 +1874,8 @@ mesh = SubResource("ArrayMesh_000xw")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-snow-small2/tree-pine-snow-small"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-snow-small2/tree-pine-snow-small/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_05qbj")
@@ -1860,6 +1888,8 @@ mesh = SubResource("ArrayMesh_1nr26")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-snow2/tree-pine-snow"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-snow2/tree-pine-snow/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qbbs8")
@@ -1872,6 +1902,8 @@ mesh = SubResource("ArrayMesh_f2e5a")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree-pine2/tree-pine"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine2/tree-pine/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5voje")
