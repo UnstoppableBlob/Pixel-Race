@@ -32,12 +32,11 @@ var trajectory_immediate_mesh: ImmediateMesh
 var trajectory_material: StandardMaterial3D
 
 @onready var trajectory_end_sphere: MeshInstance3D = null
-@onready var trajectory_sphere_particles: GPUParticles3D = null
 
 const TRAJECTORY_POINTS = 100
 const THROW_VELOCITY_MULTIPLIER = 2.5
 const TRAJECTORY_VISUAL_BOOST = 1.2
-const TRAJECTORY_SPHERE_RADIUS = 0.1
+const TRAJECTORY_SPHERE_RADIUS = 0.15
 
 const LINE_THICKNESS_SIMULATION_COUNT = 3
 const LINE_THICKNESS_OFFSET = 0.01
@@ -76,22 +75,8 @@ func _ready():
 	hand.add_child(trajectory_end_sphere)
 	trajectory_end_sphere.visible = false
 
-	trajectory_sphere_particles = GPUParticles3D.new()
-	trajectory_end_sphere.add_child(trajectory_sphere_particles)
-
-	trajectory_sphere_particles.amount = 100
-	trajectory_sphere_particles.lifetime = 2.0
-	trajectory_sphere_particles.preprocess = 1.0
-	trajectory_sphere_particles.emitting = false
-	trajectory_sphere_particles.one_shot = false
-	trajectory_sphere_particles.explosiveness = 0.0
-	trajectory_sphere_particles.randomness = 0.7
-	trajectory_sphere_particles.fixed_fps = 0
-	trajectory_sphere_particles.visibility_aabb = AABB(Vector3(-1,-1,-1), Vector3(2,2,2))
-
 	var particle_quad_mesh = QuadMesh.new()
 	particle_quad_mesh.size = Vector2(0.1, 0.1)
-	trajectory_sphere_particles.draw_pass_1 = particle_quad_mesh
 
 	var particle_process_material = ParticleProcessMaterial.new()
 	particle_process_material.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_SPHERE
@@ -118,8 +103,6 @@ func _ready():
 	particle_process_material.scale_min = 0.8
 	particle_process_material.scale_max = 1.5
 	particle_process_material.scale_curve = Curve.new()
-	
-	trajectory_sphere_particles.process_material = particle_process_material
 
 	var particle_material = StandardMaterial3D.new()
 	particle_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
@@ -193,18 +176,12 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("right_click"):
 			_draw_trajectory(delta)
-			if trajectory_sphere_particles != null and not trajectory_sphere_particles.emitting:
-				trajectory_sphere_particles.emitting = true
 		else:
 			trajectory_immediate_mesh.clear_surfaces()
 			trajectory_end_sphere.visible = false
-			if trajectory_sphere_particles != null and trajectory_sphere_particles.emitting:
-				trajectory_sphere_particles.emitting = false
 	else:
 		trajectory_immediate_mesh.clear_surfaces()
 		trajectory_end_sphere.visible = false
-		if trajectory_sphere_particles != null and trajectory_sphere_particles.emitting:
-			trajectory_sphere_particles.emitting = false
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -256,8 +233,6 @@ func remove_object():
 		holding_object.emit(false)
 		trajectory_immediate_mesh.clear_surfaces()
 		trajectory_end_sphere.visible = false
-		if trajectory_sphere_particles != null:
-			trajectory_sphere_particles.emitting = false
 
 
 func is_holding_object():
@@ -282,8 +257,6 @@ func _draw_trajectory(trajectory_time_step: float):
 	if picked_object == null:
 		trajectory_immediate_mesh.clear_surfaces()
 		trajectory_end_sphere.visible = false
-		if trajectory_sphere_particles != null:
-			trajectory_sphere_particles.emitting = false
 		return
 
 	trajectory_immediate_mesh.clear_surfaces()
