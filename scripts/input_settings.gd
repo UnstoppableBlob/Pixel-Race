@@ -10,13 +10,13 @@ var remapping_button = null
 
 var input_actions = {
 	"w": "Move Forward",
-	#"a": "Move Left",
-	#"s": "Move Backward",
-	#"d": "Move Right",
-	#"spacebar": "Jump",
-	#"grab": "Grab",
-	#"right_click": "Throw",
-	#"pause": "Pause",
+	"a": "Move Left",
+	"s": "Move Backward",
+	"d": "Move Right",
+	"spacebar": "Jump",
+	"grab": "Grab",
+	"right_click": "Throw",
+	"pause": "Pause",
 }
 
 func _ready():

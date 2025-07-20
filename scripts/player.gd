@@ -109,6 +109,7 @@ func _ready():
 	particle_material.albedo_color = Color(0.0, 1.0, 0.0, 1.0)
 	particle_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	particle_quad_mesh.material = particle_material
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 func _unhandled_input(event):

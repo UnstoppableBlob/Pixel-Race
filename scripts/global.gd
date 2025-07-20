@@ -6,10 +6,10 @@ var first_time_picking_crate = null
 
 @onready var pause_menu = $CanvasLayer/InputSettings
 
-var game_paused = false
-
 signal stage_updated(stage_value)
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func update_stage(new_stage_value: int):
 	stage = new_stage_value
@@ -17,13 +17,10 @@ func update_stage(new_stage_value: int):
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		game_paused = !game_paused
-		if game_paused:
-			Engine.time_scale = 0
-			pause_menu.visible = true
+		get_tree().paused = !get_tree().paused 
+		pause_menu.visible = get_tree().paused
+		if get_tree().paused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			Engine.time_scale = 1
-			pause_menu.visible = false
 		get_tree().root.get_viewport().set_input_as_handled()
