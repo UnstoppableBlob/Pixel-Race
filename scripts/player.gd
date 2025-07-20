@@ -183,9 +183,6 @@ func _physics_process(delta):
 		trajectory_immediate_mesh.clear_surfaces()
 		trajectory_end_sphere.visible = false
 	
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
 			
 	if global_position.y < -20:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
