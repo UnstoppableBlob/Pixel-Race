@@ -3,6 +3,7 @@ extends Node3D
 var player = null
 var stage = 0
 var first_time_picking_crate = null
+var level = 6
 
 @onready var pause_menu = $CanvasLayer/InputSettings
 

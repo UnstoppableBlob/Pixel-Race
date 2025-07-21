@@ -1,42 +1,310 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs7mqlgq65dlq"]
+[gd_scene load_steps=3 format=3 uid="uid://bs7mqlgq65dlq"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_rjvod"]
-font_size = 37
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_bh5v8"]
+[ext_resource type="Texture2D" uid="uid://1bieja0dcby7" path="res://assets/lock/lock_icon.svg" id="2_q36dq"]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelectScreen" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bh5v8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.420941, 0.984243, 0.831035, 0.298039)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(1152, 120)
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Row1" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "Select Level"
-label_settings = SubResource("LabelSettings_rjvod")
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="LevelButton1" type="Button" parent="CenterContainer/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row1/LevelButton1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row1/LevelButton1"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton2" type="Button" parent="CenterContainer/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row1/LevelButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row1/LevelButton2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton3" type="Button" parent="CenterContainer/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row1/LevelButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row1/LevelButton3"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton4" type="Button" parent="CenterContainer/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row1/LevelButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row1/LevelButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton5" type="Button" parent="CenterContainer/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row1/LevelButton5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row1/LevelButton5"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Row2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton6" type="Button" parent="CenterContainer/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row2/LevelButton6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row2/LevelButton6"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton7" type="Button" parent="CenterContainer/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row2/LevelButton7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row2/LevelButton7"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton8" type="Button" parent="CenterContainer/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row2/LevelButton8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row2/LevelButton8"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton9" type="Button" parent="CenterContainer/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row2/LevelButton9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row2/LevelButton9"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LevelButton10" type="Button" parent="CenterContainer/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row2/LevelButton10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row2/LevelButton10"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q36dq")
+expand_mode = 5
+stretch_mode = 5

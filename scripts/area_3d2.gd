@@ -19,6 +19,10 @@ func _on_body_entered(body: Node3D) -> void:
 				global.player.global_position.z = global_position.z
 				
 				global.update_stage(global.stage + 1)
+				if global.stage == 2:
+					if !is_used:
+						global.level += 1
+						
 				print(global.stage)
 				is_used = true
 
