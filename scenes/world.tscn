@@ -302,6 +302,9 @@ transform = Transform3D(0.620564, 0, 0, 0, 0.607285, 0, 0, 0, 0.620564, 62.7191,
 [node name="plate5" parent="plates" instance=ExtResource("9_66414")]
 transform = Transform3D(0.667243, 0, 0, 0, 0.649359, 0, 0, 0, 0.667243, 78.6676, 0.992563, 4.9924)
 
+[node name="plate" parent="plates" instance=ExtResource("9_66414")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1261, 1.0186, -4.6221)
+
 [node name="HUD" parent="." instance=ExtResource("9_kle61")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -315,5 +318,3 @@ visible = false
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 30.1922, 0.944677, 1.29837)
 
 [node name="LevelSelectScreen" parent="." instance=ExtResource("10_p4ne7")]
-
-[connection signal="pause" from="LevelSelectScreen" to="." method="_on_level_select_screen_pause"]
