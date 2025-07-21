@@ -22,5 +22,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		if get_tree().paused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
+			
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		get_tree().root.get_viewport().set_input_as_handled()

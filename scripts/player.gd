@@ -34,7 +34,7 @@ var trajectory_material: StandardMaterial3D
 @onready var trajectory_end_sphere: MeshInstance3D = null
 
 const TRAJECTORY_POINTS = 100
-const THROW_VELOCITY_MULTIPLIER = 2.5
+const THROW_VELOCITY_MULTIPLIER = 2.6
 const TRAJECTORY_VISUAL_BOOST = 1.2
 const TRAJECTORY_SPHERE_RADIUS = 0.15
 
