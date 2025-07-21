@@ -21,5 +21,6 @@ func _on_distance_checker_body_exited(body: Node3D) -> void:
 
 func _on_inside_checker_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		global.should_open = true
 		Transition.transition()
 		await Transition.on_transition_finished

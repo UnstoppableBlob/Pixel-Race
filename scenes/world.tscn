@@ -311,7 +311,9 @@ visible = false
 
 [node name="doors" type="Node3D" parent="."]
 
-[node name="Doorway" parent="." instance=ExtResource("9_1g4j0")]
+[node name="Doorway" parent="doors" instance=ExtResource("9_1g4j0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 30.1922, 0.944677, 1.29837)
 
 [node name="LevelSelectScreen" parent="." instance=ExtResource("10_p4ne7")]
+
+[connection signal="pause" from="LevelSelectScreen" to="." method="_on_level_select_screen_pause"]

@@ -2,6 +2,10 @@ extends Control
 
 @onready var level_buttons: Array[Button] = [] 
 
+var open = false
+
+signal pause(pause)
+
 func _ready():
 	for child in $CenterContainer/VBoxContainer/Row1.get_children():
 		if child is Button:
@@ -10,7 +14,11 @@ func _ready():
 		if child is Button:
 			level_buttons.append(child)
 
-	level_buttons.sort_custom(func(a, b): return a.name < b.name)
+	level_buttons.sort_custom(func(a, b):
+		var num_a = int(a.name.replace("LevelButton", ""))
+		var num_b = int(b.name.replace("LevelButton", ""))
+		return num_a < num_b
+	)
 
 	_update_level_buttons()
 
@@ -21,8 +29,17 @@ func _ready():
 		
 		
 func _process(delta: float) -> void:
+	if global.should_show_level_screen:
+		visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		pause.emit(true)
+		print(visible)
 	if Input.is_action_just_pressed("open_level_menu"):
-		visible = !visible
+		global.should_show_level_screen = false
+		visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		pause.emit(false)
+		print(visible)
 
 
 func _update_level_buttons():
