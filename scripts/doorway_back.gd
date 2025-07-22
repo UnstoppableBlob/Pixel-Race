@@ -21,5 +21,5 @@ func _on_distance_checker_body_exited(body: Node3D) -> void:
 
 func _on_inside_checker_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		Transition.transition("doorway-forward", global_position.x,global_position.y,global_position.z)
+		Transition.transition("doorway-back", global_position.x, global_position.y, global_position.z)
 		await Transition.on_transition_finished

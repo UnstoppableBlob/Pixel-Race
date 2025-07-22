@@ -12,7 +12,7 @@ func _on_body_entered(body: Node3D) -> void:
 			top_plate.position.y -= 0.1
 			is_down = true
 			if !is_used:
-				Transition.transition()
+				Transition.transition("plate")
 				await Transition.on_transition_finished
 				global.player.global_position.y = global_position.y + 5
 				global.player.global_position.x = global_position.x

@@ -33,7 +33,7 @@ var trajectory_material: StandardMaterial3D
 
 @onready var trajectory_end_sphere: MeshInstance3D = null
 
-const TRAJECTORY_POINTS = 100
+const TRAJECTORY_POINTS = 500
 const THROW_VELOCITY_MULTIPLIER = 2.6
 const TRAJECTORY_VISUAL_BOOST = 1.2
 const TRAJECTORY_SPHERE_RADIUS = 0.15
@@ -128,7 +128,7 @@ func _physics_process(delta):
 			
 	if Input.is_action_pressed("right_click"):
 		if picked_object != null:
-			charge += 0.2 * delta * 60
+			charge += 0.15 * delta * 60
 			charge = min(charge, 10.0)
 			charge_updated.emit(charge)
 			if charge >= 10.0:
