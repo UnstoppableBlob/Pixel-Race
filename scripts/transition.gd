@@ -24,7 +24,7 @@ func _on_animation_finished(anim_name):
 			global.player.head.rotation.y = 67.5
 		if called_by == "doorway-back":
 			global.player.global_position.x = positionx - 13
-			global.player.global_position.y = positiony - 15.9
+			global.player.global_position.y = positiony - 13
 			global.player.global_position.z = positionz
 			global.player.head.rotation.y = -67.5
 		on_transition_finished.emit()
