@@ -18,13 +18,13 @@ func _ready():
 func _on_animation_finished(anim_name):
 	if anim_name == "fadetoblack":
 		if called_by == "doorway-forward":
-			global.player.global_position.x = positionx + 12
-			global.player.global_position.y = positiony + 16
+			global.player.global_position.x = positionx + 13
+			global.player.global_position.y = positiony + 15.9
 			global.player.global_position.z = positionz
 			global.player.head.rotation.y = 67.5
 		if called_by == "doorway-back":
-			global.player.global_position.x = positionx - 12
-			global.player.global_position.y = positiony - 16
+			global.player.global_position.x = positionx - 13
+			global.player.global_position.y = positiony - 15.9
 			global.player.global_position.z = positionz
 			global.player.head.rotation.y = -67.5
 		on_transition_finished.emit()
