@@ -3,7 +3,8 @@ extends Node3D
 var player = null
 var stage = 0
 var first_time_picking_crate = null
-var level = 6
+var level = 1
+var is_reset = false
 
 
 @onready var pause_menu = $CanvasLayer/InputSettings
@@ -21,6 +22,7 @@ func update_stage(new_stage_value: int):
 
 
 func toggle_level_screen():
+	level_screen._on_update_buttons()
 	var is_opening = !level_screen.visible
 	level_screen.visible = is_opening
 	get_tree().paused = is_opening 
@@ -47,3 +49,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_level_menu"):
 		toggle_level_screen()
 		get_tree().root.get_viewport().set_input_as_handled()
+			
+func open_level_menu():
+	toggle_level_screen()
+	get_tree().root.get_viewport().set_input_as_handled()

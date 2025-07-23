@@ -42,7 +42,7 @@ size = Vector3(0.5, 0.5, 0.5)
 script = ExtResource("1_r7hdv")
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 28.6664, 14.1401, -1.91911)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 29, 15, 0)
 script = ExtResource("2_we2ka")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]

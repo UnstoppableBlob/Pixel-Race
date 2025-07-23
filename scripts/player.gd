@@ -326,3 +326,9 @@ func _draw_trajectory(trajectory_time_step: float):
 	if trajectory_end_sphere != null:
 		trajectory_end_sphere.global_transform.origin = last_valid_position
 		trajectory_end_sphere.visible = true
+
+
+func go_to(x, y, z):
+	global_position.x = x
+	global_position.y = y
+	global_position.z = z

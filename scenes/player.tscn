@@ -13,11 +13,14 @@ material = SubResource("StandardMaterial3D_em8kf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 2.7)
 script = ExtResource("1_whqpn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Physical" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Physical"]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_bqphy")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Physical"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_k0p7y")
 
