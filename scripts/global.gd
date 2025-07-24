@@ -4,7 +4,7 @@ var player = null
 var first_time_picking_crate = null
 var level = 1
 var is_reset = false
-
+var dead = false
 
 @onready var pause_menu = $CanvasLayer/InputSettings
 @onready var level_screen = $LevelSelectScreen
@@ -26,21 +26,24 @@ func toggle_level_screen():
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
-		if level_screen.visible:
-			return
-		
-		get_tree().paused = !get_tree().paused
-		pause_menu.visible = get_tree().paused
-		if get_tree().paused:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		get_tree().root.get_viewport().set_input_as_handled()
-	
-	if event.is_action_pressed("open_level_menu"):
-		toggle_level_screen()
-		get_tree().root.get_viewport().set_input_as_handled()
+	if !dead:
+		if event.is_action_pressed("pause"):
+			print(1112, level_screen)
+			
+			if level_screen.visible:
+				return
+			
+			get_tree().paused = !get_tree().paused
+			pause_menu.visible = get_tree().paused
+			if get_tree().paused:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			get_tree().root.get_viewport().set_input_as_handled()
+	if !dead:
+		if event.is_action_pressed("open_level_menu"):
+			toggle_level_screen()
+			get_tree().root.get_viewport().set_input_as_handled()
 			
 func open_level_menu():
 	toggle_level_screen()

@@ -188,6 +188,7 @@ func _physics_process(delta):
 	if global_position.y < -20:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
+		global.dead = true
 
 	move_and_slide()
 
