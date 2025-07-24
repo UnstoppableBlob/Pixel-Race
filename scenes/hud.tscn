@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1suv07447lk5"]
+[gd_scene load_steps=4 format=3 uid="uid://b1suv07447lk5"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_jrylv"]
 
@@ -10,14 +10,7 @@ border_width_bottom = 3
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yprrn"]
-bg_color = Color(1, 0.6, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci5gv"]
-bg_color = Color(0.184503, 0.791933, 0.49564, 1)
+bg_color = Color(0.44408, 0.80287, 0.516447, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_bottom = 3
@@ -52,27 +45,3 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_yprrn")
 max_value = 10.0
 step = 0.001
 show_percentage = false
-
-[node name="StageTracker" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -39.0
-offset_right = 342.0
-offset_bottom = -10.0
-grow_vertical = 0
-tooltip_text = "
-"
-theme_override_styles/background = SubResource("StyleBoxFlat_vfxg0")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ci5gv")
-max_value = 10.0
-step = 1.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="CanvasLayer/StageTracker"]
-layout_mode = 0
-offset_left = 145.0
-offset_top = 3.0
-offset_right = 185.0
-offset_bottom = 26.0
