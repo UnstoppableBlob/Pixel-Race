@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://bwp5ax0gjxcxu"]
+[gd_scene load_steps=22 format=3 uid="uid://bwp5ax0gjxcxu"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_r7hdv"]
-[ext_resource type="PackedScene" uid="uid://f6xld2k5xkl2" path="res://scenes/spike_big.tscn" id="2_idf1j"]
+[ext_resource type="PackedScene" uid="uid://f6xld2k5xkl2" path="res://scenes/spike.tscn" id="2_idf1j"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_we2ka"]
 [ext_resource type="MeshLibrary" uid="uid://dfpxq8h6h5n4v" path="res://assets/blocks/blocks1snowpine.tres" id="3_f7oo4"]
 [ext_resource type="Script" path="res://scripts/rigid_body_3d.gd" id="4_dagby"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://di2i1djawqjjr" path="res://scenes/plate.tscn" id="9_66414"]
 [ext_resource type="PackedScene" uid="uid://b1suv07447lk5" path="res://scenes/hud.tscn" id="9_kle61"]
 [ext_resource type="PackedScene" uid="uid://bs7mqlgq65dlq" path="res://scenes/level_select.tscn" id="10_p4ne7"]
+[ext_resource type="PackedScene" uid="uid://cvflc1hund2sp" path="res://scenes/spike_low.tscn" id="13_ntfql"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em8kf"]
 
@@ -44,9 +45,8 @@ script = ExtResource("1_r7hdv")
 
 [node name="Danger" type="Node3D" parent="."]
 
-[node name="Spike-big" parent="Danger" node_paths=PackedStringArray("target_node") instance=ExtResource("2_idf1j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0244, 0.944678, 0.425189)
-target_node = NodePath("../../Player")
+[node name="Spike-big" parent="Danger" instance=ExtResource("2_idf1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.1473, 0.944678, 0.425189)
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 29, 15, 0)
@@ -90,7 +90,7 @@ environment = SubResource("Environment_1istj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.548, -1.84, -0.765)
 
 [node name="Crate2" type="Node3D" parent="crates"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5073, 3.42098, -2.70699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3282, 3.42098, 1.4649)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="crates/Crate2" groups=["crates"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279739, -0.105742, 0.0486374)
@@ -339,3 +339,6 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 92.45,
 
 [node name="InputSettings" parent="CanvasLayer" instance=ExtResource("8_xenky")]
 visible = false
+
+[node name="Spike-low" parent="." instance=ExtResource("13_ntfql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.3474, 0.944678, 2.38491)

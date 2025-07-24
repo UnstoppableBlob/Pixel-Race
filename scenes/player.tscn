@@ -3,25 +3,23 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whqpn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em8kf"]
+emission = Color(1, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bqphy"]
 material = SubResource("StandardMaterial3D_em8kf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0p7y"]
+size = Vector3(1, 3, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 2.7)
 script = ExtResource("1_whqpn")
 
-[node name="Physical" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Physical"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_bqphy")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Physical"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_k0p7y")
 
 [node name="Head" type="Node3D" parent="."]
