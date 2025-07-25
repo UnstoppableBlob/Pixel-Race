@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://di2i1djawqjjr"]
+[gd_scene load_steps=15 format=4 uid="uid://di2i1djawqjjr"]
 
 [ext_resource type="Script" path="res://scripts/area_3d2.gd" id="1_3l1e3"]
+[ext_resource type="Script" path="res://scripts/waypoint.gd" id="2_oyx4e"]
+[ext_resource type="Texture2D" uid="uid://bal2hxnd3y8xi" path="res://icon.svg" id="3_a5v03"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iov12"]
 size = Vector3(1.9, 0.2, 1.9)
@@ -115,6 +117,21 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/platetest/Cube_001/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0933228, 0)
 shape = SubResource("BoxShape3D_poty6")
+
+[node name="waypoint" type="Node3D" parent="."]
+visible = false
+script = ExtResource("2_oyx4e")
+
+[node name="origin" type="Node2D" parent="waypoint"]
+
+[node name="marker" type="Sprite2D" parent="waypoint/origin"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_a5v03")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="waypoint"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
