@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://boq2fijv02aw7"]
+
+[ext_resource type="PackedScene" uid="uid://b53jyvixbtl2k" path="res://scenes/doorway_forward.tscn" id="1_qx5ds"]
+[ext_resource type="PackedScene" uid="uid://dthxls7vh0fst" path="res://scenes/doorway_back.tscn" id="2_s2stk"]
+
+[node name="Full_doorway" type="Node3D"]
+
+[node name="Doorway" parent="." instance=ExtResource("1_qx5ds")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
+
+[node name="Doorway2" parent="." instance=ExtResource("2_s2stk")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 12, 15, 0)
