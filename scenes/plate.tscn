@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://di2i1djawqjjr"]
+[gd_scene load_steps=19 format=4 uid="uid://di2i1djawqjjr"]
 
 [ext_resource type="Script" path="res://scripts/area_3d2.gd" id="1_3l1e3"]
 [ext_resource type="Script" path="res://scripts/waypoint.gd" id="2_oyx4e"]
 [ext_resource type="Texture2D" uid="uid://bal2hxnd3y8xi" path="res://icon.svg" id="3_a5v03"]
+[ext_resource type="PackedScene" uid="uid://ct30g8p2xe3aw" path="res://assets/arrow/car-arrow/source/carArrow.glb" id="4_q4oc8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iov12"]
 size = Vector3(1.9, 0.2, 1.9)
@@ -83,6 +84,68 @@ shadow_mesh = SubResource("ArrayMesh_c3uio")
 [sub_resource type="BoxShape3D" id="BoxShape3D_poty6"]
 size = Vector3(1.9, 2.1, 1.9)
 
+[sub_resource type="Animation" id="Animation_qfs8q"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carArrow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("carArrow:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.7, 0), Vector3(0, 2, 0), Vector3(0, 1.7, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_htg2q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carArrow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("carArrow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.7, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j84my"]
+_data = {
+"RESET": SubResource("Animation_htg2q"),
+"spin": SubResource("Animation_qfs8q")
+}
+
 [node name="plate" type="Node3D"]
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -131,7 +194,17 @@ texture = ExtResource("3_a5v03")
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="waypoint"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 anchor_mode = 0
+
+[node name="carArrow" parent="." instance=ExtResource("4_q4oc8")]
+transform = Transform3D(0.2, 0, 0, 0, -1.31134e-08, 0.2, 0, -0.3, -8.74228e-09, 0, 1.7, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j84my")
+}
+autoplay = "spin"
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
