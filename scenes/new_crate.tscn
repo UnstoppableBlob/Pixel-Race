@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://hjms87dtg308"]
+
+[ext_resource type="Script" path="res://scripts/rigid_body_3d.gd" id="1_3ctw7"]
+[ext_resource type="PackedScene" uid="uid://ctlxdj30j1cbt" path="res://assets/Models/GLB format/crate-item.glb" id="2_yp4jy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2etm"]
+friction = 0.85
+bounce = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_445n2"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Crate" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["crates"]]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_h2etm")
+script = ExtResource("1_3ctw7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_445n2")
+
+[node name="crate-item2" parent="RigidBody3D" instance=ExtResource("2_yp4jy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[connection signal="body_exited" from="RigidBody3D" to="RigidBody3D" method="_on_body_exited"]
