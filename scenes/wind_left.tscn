@@ -1,27 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj3ks8go732xv"]
+[gd_scene load_steps=5 format=3 uid="uid://csh8r3r0n3wab"]
 
-[ext_resource type="Script" path="res://scripts/area_3d3.gd" id="1_wn87p"]
-[ext_resource type="Material" uid="uid://0gl4dda6atup" path="res://outline/wind_up.tres" id="2_dgg4j"]
-[ext_resource type="QuadMesh" uid="uid://dh2pwda8apco8" path="res://outline/wind_down_up_material.tres" id="3_iyehj"]
+[ext_resource type="Script" path="res://outline/area_3d5.gd" id="1_ixv8v"]
+[ext_resource type="Material" uid="uid://csexkqhh31eje" path="res://outline/wind left.tres" id="2_yh0ue"]
+[ext_resource type="QuadMesh" uid="uid://vxhqf2bg1rmp" path="res://outline/wind_left_right_material.tres" id="3_adtpd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yh20f"]
 size = Vector3(5, 6, 2.19531)
 
-[node name="Wind-up" type="Node3D"]
+[node name="Wind-left" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("1_wn87p")
+script = ExtResource("1_ixv8v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_yh20f")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82012e-05, 2.86331, -0.00298309)
 amount = 96
 lifetime = 8.0
-process_material = ExtResource("2_dgg4j")
-draw_pass_1 = ExtResource("3_iyehj")
+process_material = ExtResource("2_yh0ue")
+draw_pass_1 = ExtResource("3_adtpd")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
