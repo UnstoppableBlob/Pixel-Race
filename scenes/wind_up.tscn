@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj3ks8go732xv"]
+
+[ext_resource type="Script" path="res://scripts/area_3d3.gd" id="1_wn87p"]
+[ext_resource type="Material" uid="uid://0gl4dda6atup" path="res://outline/wind_up.tres" id="2_dgg4j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yh20f"]
+size = Vector3(5, 6, 2.19531)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wafr"]
+transparency = 1
+albedo_color = Color(0.67451, 0.67451, 0.67451, 0.913725)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.33
+billboard_mode = 2
+distance_fade_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_uc5sg"]
+material = SubResource("StandardMaterial3D_2wafr")
+size = Vector2(0.1, 0.8)
+
+[node name="Wind-up" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_wn87p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_yh20f")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 96
+lifetime = 8.0
+process_material = ExtResource("2_dgg4j")
+draw_pass_1 = SubResource("QuadMesh_uc5sg")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

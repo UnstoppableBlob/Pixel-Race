@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6udv6h70f7xo"]
+
+[ext_resource type="Script" path="res://scripts/rigid_body_3d.gd" id="1_hwhc2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2etm"]
+friction = 0.85
+bounce = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_178xq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0m4g7"]
+
+[node name="Crate" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["crates"]]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_h2etm")
+script = ExtResource("1_hwhc2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_178xq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_0m4g7")
+
+[connection signal="body_exited" from="RigidBody3D" to="RigidBody3D" method="_on_body_exited"]

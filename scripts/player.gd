@@ -224,6 +224,7 @@ func pick_object():
 		picked_object = collider
 		picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
 		holding_object.emit(true)
+		return true
 
 
 func remove_object():
