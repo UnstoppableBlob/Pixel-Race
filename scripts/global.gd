@@ -5,6 +5,8 @@ var first_time_picking_crate = null
 var level = 1
 var is_reset = false
 var dead = false
+var is_picking = false
+var block = null
 
 @onready var pause_menu = $CanvasLayer/InputSettings
 @onready var level_screen = $LevelSelectScreen

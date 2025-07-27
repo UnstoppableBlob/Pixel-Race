@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=4 uid="uid://cpnfhcwddio4w"]
+[gd_scene load_steps=220 format=4 uid="uid://cpnfhcwddio4w"]
 
 [ext_resource type="PackedScene" uid="uid://bl5tuyxqb5w4k" path="res://assets/Models/GLB format/arrow.glb" id="1_p44sm"]
 [ext_resource type="PackedScene" uid="uid://dgro1bl8nno7s" path="res://assets/Models/GLB format/arrows.glb" id="2_7lc4v"]
@@ -977,8 +977,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cujet")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0gew7"]
-points = PackedVector3Array(0.5, 0.533166, -0.376293, 0.499903, 0.346831, -0.0971217, 0.499903, 0.499961, -0.5, 0.5, 0.570109, -0.473369, 0.499903, 0.190073, 0.526641, 0.499903, 0.119982, 0.49991, 0.499903, 0.273056, 0.0970317, 0.379895, 0.379979, -0.5, 0.379895, 0, 0.49991, -0.5, 0.499961, -0.5, -0.5, 0.535007, -0.486735, -0.5, 0.511959, -0.320519, -0.5, 0.438185, -0.126365, -0.5, 0.248167, 0.37369, -0.5, 0.155028, 0.513276, -0.38009, 0, 0.49991, -0.38009, 0.379979, -0.5, -0.5, 0.441868, -0.347149, -0.5, 0.119982, 0.49991, -0.5, 0.273056, 0.0970317)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1i5ry"]
+size = Vector3(1, 0.0439453, 1.05852)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_670bd"]
+size = Vector3(1, 0.116943, 1.06482)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_your2"]
 resource_name = "colormap"
@@ -1787,9 +1790,9 @@ shape = SubResource("ConvexPolygonShape3D_c8f7d")
 visible = false
 
 [node name="platform-ramp2" type="Node3D" parent="."]
-visible = false
 
 [node name="platform-ramp" type="MeshInstance3D" parent="platform-ramp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_xm325")
 skeleton = NodePath("")
 
@@ -1798,7 +1801,12 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform-ramp2/platform-ramp/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_0gew7")
+transform = Transform3D(1, 0, 0, 0, 0.8985, -0.438925, 0, 0.438925, 0.8985, 0, 0.247645, -0.033076)
+shape = SubResource("BoxShape3D_1i5ry")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="platform-ramp2/platform-ramp/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.93418, -0.356803, 0, 0.356803, 0.93418, 0, 0.253327, -0.019393)
+shape = SubResource("BoxShape3D_670bd")
 
 [node name="platform2" type="Node3D" parent="."]
 visible = false

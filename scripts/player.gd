@@ -221,9 +221,12 @@ func player():
 func pick_object():
 	var collider = interaction.get_collider()
 	if collider != null and collider is RigidBody3D:
+		global.block = collider
+		global.is_picking = true
 		picked_object = collider
 		picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
 		holding_object.emit(true)
+		global.block.outline.visible = true
 		return true
 
 
@@ -233,6 +236,9 @@ func remove_object():
 		holding_object.emit(false)
 		trajectory_immediate_mesh.clear_surfaces()
 		trajectory_end_sphere.visible = false
+		global.is_picking = false
+		global.block.outline.visible = false
+		print("works")
 
 
 func is_holding_object():
@@ -249,6 +255,9 @@ func throw():
 	picked_object.angular_velocity = Vector3(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized() * randf_range(1.0, 5.0)
 	
 	remove_object()
+	global.block.outline.visible = false
+	print("works")
+	global.is_picking = false
 	charge = 0.0
 	charge_updated.emit(charge)
 
