@@ -18,7 +18,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_yh20f")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82012e-05, 2.86331, -0.00298309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6223, 2.86331, -0.00298329)
 amount = 96
 lifetime = 8.0
 process_material = ExtResource("2_yh0ue")
