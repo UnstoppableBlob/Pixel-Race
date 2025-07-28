@@ -1792,7 +1792,6 @@ visible = false
 [node name="platform-ramp2" type="Node3D" parent="."]
 
 [node name="platform-ramp" type="MeshInstance3D" parent="platform-ramp2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_xm325")
 skeleton = NodePath("")
 

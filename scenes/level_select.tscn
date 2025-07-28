@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://1bieja0dcby7" path="res://assets/lock/lock_icon.svg" id="2_q36dq"]
 
 [node name="LevelSelectScreen" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,34 +137,6 @@ texture = ExtResource("2_q36dq")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="LevelButton5" type="Button" parent="CenterContainer/VBoxContainer/Row1"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row1/LevelButton5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row1/LevelButton5"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_q36dq")
-expand_mode = 5
-stretch_mode = 5
-
 [node name="Row2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -181,7 +152,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "6"
+text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -209,7 +180,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "7"
+text = "6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -237,7 +208,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "8"
+text = "7"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -265,7 +236,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "9"
+text = "8"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -281,41 +252,11 @@ texture = ExtResource("2_q36dq")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="LevelButton10" type="Button" parent="CenterContainer/VBoxContainer/Row2"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/Row2/LevelButton10"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LockIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/Row2/LevelButton10"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_q36dq")
-expand_mode = 5
-stretch_mode = 5
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row1/LevelButton1" to="." method="_on_level_button_1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row1/LevelButton2" to="." method="_on_level_button_2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row1/LevelButton3" to="." method="_on_level_button_3_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row1/LevelButton4" to="." method="_on_level_button_4_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Row1/LevelButton5" to="." method="_on_level_button_5_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row2/LevelButton6" to="." method="_on_level_button_6_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row2/LevelButton7" to="." method="_on_level_button_7_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row2/LevelButton8" to="." method="_on_level_button_8_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Row2/LevelButton9" to="." method="_on_level_button_9_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Row2/LevelButton10" to="." method="_on_level_button_10_pressed"]

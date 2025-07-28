@@ -67,11 +67,6 @@ func _on_level_button_4_pressed() -> void:
 	global.player.go_to()
 
 
-func _on_level_button_5_pressed() -> void:
-	unpause()
-	global.player.go_to()
-
-
 func _on_level_button_6_pressed() -> void:
 	unpause()
 	global.player.go_to()
@@ -88,10 +83,5 @@ func _on_level_button_8_pressed() -> void:
 
 
 func _on_level_button_9_pressed() -> void:
-	unpause()
-	global.player.go_to()
-
-
-func _on_level_button_10_pressed() -> void:
 	unpause()
 	global.player.go_to()
