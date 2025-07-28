@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1bieja0dcby7" path="res://assets/lock/lock_icon.svg" id="2_q36dq"]
 
 [node name="LevelSelectScreen" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
