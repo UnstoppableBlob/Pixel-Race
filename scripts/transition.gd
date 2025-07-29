@@ -29,7 +29,7 @@ func _on_animation_finished(anim_name):
 			global.player.head.rotation.y = -67.5
 		if called_by == "final_doorway":
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
+			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 			global.dead = true
 		on_transition_finished.emit()
 		anim_player.play("fadetonormal")

@@ -2,7 +2,7 @@ extends Node3D
 
 var player = null
 var first_time_picking_crate = null
-var level = 1
+var level = 8
 var is_reset = false
 var dead = false
 var is_picking = false

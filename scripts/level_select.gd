@@ -59,29 +59,29 @@ func _on_level_button_2_pressed() -> void:
 
 func _on_level_button_3_pressed() -> void:
 	unpause()
-	global.player.go_to()
+	global.player.go_to(152.189, 34.193, 6.848)
 
 
 func _on_level_button_4_pressed() -> void:
 	unpause()
-	global.player.go_to()
+	global.player.go_to(197.474, 48.401, 9.892)
 
 
 func _on_level_button_6_pressed() -> void:
 	unpause()
-	global.player.go_to()
+	global.player.go_to(253.458, 67.871, 8.149)
 
 
 func _on_level_button_7_pressed() -> void:
 	unpause()
-	global.player.go_to()
+	global.player.go_to(311.298, 82.581, 6.613)
 
 
 func _on_level_button_8_pressed() -> void:
 	unpause()
-	global.player.go_to()
+	global.player.go_to(367.059, 97.77, 6.613)
 
 
 func _on_level_button_9_pressed() -> void:
 	unpause()
-	global.player.go_to()
+	global.player.go_to(450.809, 113.906, 5.125)
